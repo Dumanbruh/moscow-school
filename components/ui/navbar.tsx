@@ -5,7 +5,7 @@ const Navbar = () => {
     const theme = useTheme();
     const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
 
-    return (
+    return isDesktop ? (
         <Stack height={120} direction={"row"}>
             <Stack width={"51%"}
                 direction={"row"}
@@ -54,7 +54,51 @@ const Navbar = () => {
 
             </Stack>
         </Stack>
-    )
+    ) : (<Stack height={96} direction={"row"}>
+        <Stack width={"100%"}
+            direction={"row"}
+            spacing={"25px"}
+            sx={{
+                height: "100%",
+                background: "linear-gradient(90deg, #FFD324 0%, #FF8900 100%)",
+                justifyContent: "center",
+                alignItems: "center",
+                boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"
+            }}>
+            <Box
+                component={"img"}
+                src="/images/logos/navbar/complex-logo.svg"
+                sx={{
+                    maxHeight: "40px",
+                    width: "25%"
+                }}
+            />
+            <Box
+                component={"img"}
+                src="/images/logos/navbar/moscow-educ-logo.svg"
+                sx={{
+                    maxHeight: "40px",
+                    width: "25%"
+                }}
+            />
+            <Box
+                component={"img"}
+                src="/images/logos/navbar/mossport-logo.svg"
+                sx={{
+                    maxHeight: "40px",
+                    width: "25%"
+                }}
+            />
+            <Box
+                component={"img"}
+                src="/images/logos/navbar/100-years-logo.svg"
+                sx={{
+                    maxHeight: "40px",
+                    width: "25%"
+                }}
+            />
+        </Stack>
+    </Stack>)
 }
 
 export default Navbar

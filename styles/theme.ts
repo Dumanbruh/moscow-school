@@ -8,6 +8,7 @@ declare module "@mui/material/styles" {
     header: React.CSSProperties;
     body: React.CSSProperties;
     fieldHeader: React.CSSProperties;
+    footerHeader: React.CSSProperties;
   }
 
   // allow configuration using `createTheme`
@@ -17,6 +18,7 @@ declare module "@mui/material/styles" {
     header?: React.CSSProperties;
     body?: React.CSSProperties;
     fieldHeader?: React.CSSProperties;
+    footerHeader?: React.CSSProperties;
   }
 }
 
@@ -27,6 +29,7 @@ declare module "@mui/material/Typography" {
     header: true;
     body: true;
     fieldHeader: true;
+    footerHeader: true;
   }
 }
 
@@ -66,6 +69,10 @@ const theme = createTheme({
       fontFamily: "Gotham Pro Light",
       fontWeight: 400,
     },
+    footerHeader: {
+      fontFamily: "Gotham Pro Bold",
+      fontWeight: 700,
+    }
   },
 });
 

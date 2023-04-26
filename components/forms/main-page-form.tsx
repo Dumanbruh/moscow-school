@@ -10,7 +10,11 @@ interface FormValues {
     name: string;
 }
 
-const MainPageForm = () => {
+interface Props {
+    isDesktop: boolean
+}
+
+const MainPageForm = ({ isDesktop }: Props) => {
 
     const initialValues: FormValues = {
         email: "",
@@ -26,7 +30,7 @@ const MainPageForm = () => {
 
     return (
         <form onSubmit={formik.handleSubmit}>
-            <Stack spacing={"24px"} sx={{ minWidth: "446px" }}>
+            <Stack spacing={"24px"} sx={{ minWidth: isDesktop ? "446px" : "100%" }}>
                 <Stack spacing={"6px"}>
                     <Typography variant='fieldHeader' sx={{ fontSize: "24px" }}>
                         E-mail
