@@ -3,10 +3,10 @@ import React from 'react'
 
 const Footer = () => {
     const theme = useTheme();
-    const isDesktop = useMediaQuery(theme.breakpoints.up("md"))
+    const isDesktop = useMediaQuery("(min-width:700px)")
 
     return isDesktop ? (
-        <Stack width={"100%"}>
+        <Stack height={641} width={"100%"}>
             <Box height={564} width={"100%"} sx={{
                 backgroundImage: "url(/images/bg/footer-bg.png)",
                 backgroundRepeat: "no-repeat",
@@ -60,6 +60,13 @@ const Footer = () => {
                     }}>
                     <Box
                         component={"img"}
+                        src="/images/logos/footer/department-logo.svg"
+                        sx={{
+                            maxHeight: "40px",
+                        }}
+                    />
+                    <Box
+                        component={"img"}
                         src="/images/logos/footer/complex-logo.svg"
                         sx={{
                             maxHeight: "40px"
@@ -93,9 +100,9 @@ const Footer = () => {
                 </Stack>
             </Stack>
         </Stack >
-    ) : (<Stack width={"100%"}>
-        <Stack width={"100%"} alignItems={"center"} spacing={2}>
-            <Box height={564} width={"100%"} sx={{
+    ) : (<Stack height={641} width={"100%"}>
+        {/* <Stack width={"100%"} alignItems={"center"} spacing={2}>
+            <Box width={"100%"} sx={{
                 backgroundImage: "url(/images/bg/footer-bg.png)",
                 backgroundRepeat: "no-repeat",
                 pt: "75px"
@@ -134,13 +141,14 @@ const Footer = () => {
                 </Stack>
 
             </Box>
-            <iframe src="https://yandex.com/map-widget/v1/?um=constructor%3A48d48ecdf9dac9ca29b98da2f451f4241a37973675f422de5a973a001b82195e&amp;source=constructor" width="100%" height="449" frameBorder="0"></iframe>        </Stack>
+            <iframe src="https://yandex.com/map-widget/v1/?um=constructor%3A48d48ecdf9dac9ca29b98da2f451f4241a37973675f422de5a973a001b82195e&amp;source=constructor" width="100%" height="449" frameBorder="0"></iframe>
+        </Stack> */}
 
 
         <Stack height={90} direction={"row"} sx={{ borderTop: "2px solid rgba(146, 146, 146, 0.2)" }}>
             <Stack width={"100%"}
                 direction={"row"}
-                spacing={"25px"}
+                spacing={1}
                 sx={{
                     height: "100%",
                     justifyContent: "center",
@@ -148,34 +156,42 @@ const Footer = () => {
                 }}>
                 <Box
                     component={"img"}
+                    src="/images/logos/footer/department-logo.svg"
+                    sx={{
+                        maxHeight: "30px",
+                        width: "20%"
+                    }}
+                />
+                <Box
+                    component={"img"}
                     src="/images/logos/footer/complex-logo.svg"
                     sx={{
-                        maxHeight: "40px",
-                        width: "25%"
+                        maxHeight: "30px",
+                        width: "20%"
                     }}
                 />
                 <Box
                     component={"img"}
                     src="/images/logos/footer/moscow-educ-logo.svg"
                     sx={{
-                        maxHeight: "40px",
-                        width: "25%"
+                        maxHeight: "30px",
+                        width: "20%"
                     }}
                 />
                 <Box
                     component={"img"}
                     src="/images/logos/footer/mossport-logo.svg"
                     sx={{
-                        maxHeight: "40px",
-                        width: "25%"
+                        maxHeight: "30px",
+                        width: "20%"
                     }}
                 />
                 <Box
                     component={"img"}
                     src="/images/logos/footer/100-years-logo.svg"
                     sx={{
-                        maxHeight: "40px",
-                        width: "25%"
+                        maxHeight: "30px",
+                        width: "20%"
                     }}
                 />
             </Stack>

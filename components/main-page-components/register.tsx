@@ -42,10 +42,7 @@ const RegisterBlock = ({ isDesktop }: RegisterProps) => {
             </Stack>
         </Box >
     ) : (
-        <Box height={"100%"} sx={{
-            backgroundImage: "url(/images/bg/mobile/reg-bg.png)",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "100% 100%",
+        <Box height={1400} sx={{
             width: "100%",
         }}>
             <Stack spacing={"16px"} sx={{
@@ -53,8 +50,12 @@ const RegisterBlock = ({ isDesktop }: RegisterProps) => {
                 alignItems: "center",
                 pt: "100px",
                 px: "32px",
-                pb: "154px",
+                mb: "154px",
+                background: "linear-gradient(90.35deg, #FFD324 -71.13%, #FF9A08 39.11%, #FDAA4A 99.56%)",
+                position: "relative"
             }}>
+                <Box component={"img"} sx={{ position: "absolute", width: "29.5%", left: 0, top: 0, zIndex: 1 }} src={"images/bg/mobile/reg-top.png"} />
+                <Box component={"img"} sx={{ position: "absolute", right: 0, bottom: 0, zIndex: 1 }} src={"images/bg/mobile/reg-bottom.png"} />
                 <Stack sx={{
                     maxWidth: "520px",
                 }}>

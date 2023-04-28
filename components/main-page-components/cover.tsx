@@ -7,30 +7,67 @@ interface CoverProps {
 
 
 const Cover = ({ isDesktop }: CoverProps) => {
-    return (
-        <Box height={isDesktop ? 800 : 1200} sx={{
-            backgroundImage: isDesktop ? "url(/images/bg/cover-bg.png)" : "url(/images/bg/mobile/cover-bg.png)",
+    return isDesktop ? (
+        <Box height={800} sx={{
+            backgroundImage: "url(/images/bg/cover-bg.png)",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center center",
             backgroundSize: "100% 100%",
             width: "100%",
         }}>
-            <Stack sx={{ width: "100%", height: "100%", justifyContent: "center", alignItems: "center" }} spacing={isDesktop ? "78px" : "160px"}>
+            <Stack sx={{ width: "100%", height: "100%", justifyContent: "center", alignItems: "center" }} spacing={"78px"}>
                 <Stack>
-                    <Typography variant='cover' sx={{ fontSize: isDesktop ? "187px" : "96px", maxWidth: isDesktop ? "625px" : "344px" }}>ФЕСТИВАЛЬ</Typography>
-                    <Typography variant='cover' sx={{ fontSize: isDesktop ? "107px" : "55px", maxWidth: isDesktop ? "625px" : "344px" }}>ШКОЛЬНОГО СПОРТА</Typography>
+                    <Typography variant='cover' sx={{ fontSize: "187px", maxWidth: "625px" }}>ФЕСТИВАЛЬ</Typography>
+                    <Typography variant='cover' sx={{ fontSize: "107px", maxWidth: "625px" }}>ШКОЛЬНОГО СПОРТА</Typography>
                 </Stack>
-                {isDesktop ? (
-                    <Typography variant='cover' sx={{ fontSize: "46px", maxWidth: "625px", textAlign: "center", whiteSpace: "pre-line" }}>
-                        {`ПОСВЯЩЁННЫЙ ПРАЗДНОВАНИЮ 
+
+                <Typography variant='cover' sx={{ fontSize: "46px", maxWidth: "625px", textAlign: "center", whiteSpace: "pre-line" }}>
+                    {`ПОСВЯЩЁННЫЙ ПРАЗДНОВАНИЮ 
                     100-ЛЕТИЯ МОСКОВСКОГО СПОРТА`}
-                    </Typography>) : (
+                </Typography>
+            </Stack>
+        </Box>
+    ) : (
+        <Box height={"900px"} sx={{
+            width: "100%",
+        }}>
+            <Stack sx={{
+                width: "100%", height: "100%",
+                position: "relative"
+            }} direction={"row"}>
+                <Box component={"img"} sx={{ position: "absolute", width: "100%", px: "10px", top: "5%", right: 0, left: 0, zIndex: 1 }} src={"images/bg/mobile/cover-center.png"} />
+                <Box component={"img"} sx={{ position: "absolute", width: "50%", top: 0, right: 0, zIndex: 1 }} src={"images/bg/mobile/cover-mobile-top-left.png"} />
+                <Stack
+                    width={"50%"}
+                    sx={{
+                        height: "100%",
+                        background: "linear-gradient(90deg, #FFD324 0%, #FF8900 100%)",
+                        position: "relative"
+                    }}>
+                    <Box component={"img"} sx={{ position: "absolute", width: "100%", left: 0, bottom: 0, zIndex: 1 }} src={"images/bg/mobile/cover-mobile-left.png"} />
+                </Stack>
+                <Stack
+                    width={"50%"}
+                    sx={{
+                        height: "100%",
+                        background: "linear-gradient(90deg, #FF6373 0%, #CC1427 100%)",
+                        position: "relative"
+                    }}>
+                    <Box component={"img"} sx={{ position: "absolute", width: "100%", right: 0, bottom: 0, zIndex: 1 }} src={"images/bg/mobile/cover-mobile-right.png"} />
+                </Stack>
+                <Stack sx={{ width: "100%", height: "100%", justifyContent: "center", alignItems: "center", position: "absolute", zIndex: 3 }} spacing={"78px"}>
+                    <Stack>
+                        <Typography variant='cover' sx={{ fontSize: "96px", maxWidth: "344px" }}>ФЕСТИВАЛЬ</Typography>
+                        <Typography variant='cover' sx={{ fontSize: "55px", maxWidth: "344px" }}>ШКОЛЬНОГО СПОРТА</Typography>
+                    </Stack>
+
                     <Typography variant='cover' sx={{ fontSize: "36px", maxWidth: "344px", textAlign: "center", whiteSpace: "pre-line" }}>
                         {`ПОСВЯЩЁННЫЙ 
-                        ПРАЗДНОВАНИЮ 
-                    100-ЛЕТИЯ МОСКОВСКОГО 
-                    СПОРТА`}
-                    </Typography>)}
+                            ПРАЗДНОВАНИЮ 
+                        100-ЛЕТИЯ МОСКОВСКОГО 
+                        СПОРТА`}
+                    </Typography>
+                </Stack>
             </Stack>
         </Box>
     )

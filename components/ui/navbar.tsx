@@ -3,7 +3,7 @@ import { Stack, useTheme, useMediaQuery, Box } from "@mui/material";
 
 const Navbar = () => {
     const theme = useTheme();
-    const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
+    const isDesktop = useMediaQuery("(min-width:700px)");
 
     return isDesktop ? (
         <Stack height={120} direction={"row"}>
@@ -17,6 +17,13 @@ const Navbar = () => {
                     alignItems: "center",
                     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"
                 }}>
+                <Box
+                    component={"img"}
+                    src="/images/logos/navbar/department-logo.svg"
+                    sx={{
+                        maxHeight: "40px"
+                    }}
+                />
                 <Box
                     component={"img"}
                     src="/images/logos/navbar/complex-logo.svg"
@@ -57,7 +64,7 @@ const Navbar = () => {
     ) : (<Stack height={96} direction={"row"}>
         <Stack width={"100%"}
             direction={"row"}
-            spacing={"25px"}
+            spacing={1}
             sx={{
                 height: "100%",
                 background: "linear-gradient(90deg, #FFD324 0%, #FF8900 100%)",
@@ -67,34 +74,42 @@ const Navbar = () => {
             }}>
             <Box
                 component={"img"}
+                src="/images/logos/navbar/department-logo.svg"
+                sx={{
+                    maxHeight: "30px",
+                    width: "20%"
+                }}
+            />
+            <Box
+                component={"img"}
                 src="/images/logos/navbar/complex-logo.svg"
                 sx={{
-                    maxHeight: "40px",
-                    width: "25%"
+                    maxHeight: "30px",
+                    width: "20%"
                 }}
             />
             <Box
                 component={"img"}
                 src="/images/logos/navbar/moscow-educ-logo.svg"
                 sx={{
-                    maxHeight: "40px",
-                    width: "25%"
+                    maxHeight: "30px",
+                    width: "20%"
                 }}
             />
             <Box
                 component={"img"}
                 src="/images/logos/navbar/mossport-logo.svg"
                 sx={{
-                    maxHeight: "40px",
-                    width: "25%"
+                    maxHeight: "30px",
+                    width: "20%"
                 }}
             />
             <Box
                 component={"img"}
                 src="/images/logos/navbar/100-years-logo.svg"
                 sx={{
-                    maxHeight: "40px",
-                    width: "25%"
+                    maxHeight: "30px",
+                    width: "20%"
                 }}
             />
         </Stack>

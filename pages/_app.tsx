@@ -6,6 +6,7 @@ import theme from '@/styles/theme';
 import Navbar from '@/components/ui/navbar';
 import Footer from '@/components/ui/footer';
 import useGlobalMediaQuery from '@/hooks/useGlobalMediaQuery';
+import { Stack } from '@mui/material';
 
 export default function App({ Component, pageProps }: AppProps) {
   const { isDesktop } = useGlobalMediaQuery();
