@@ -1,29 +1,40 @@
-import { Button, FormControl, FormHelperText, FormLabel, Input, InputLabel, Stack, TextField, Typography } from '@mui/material';
+import { Alert, Snackbar, Stack, TextField, Typography } from '@mui/material';
 import { useFormik } from 'formik'
-import React from 'react'
-import CustomBtn from '../ui/custom-btn-submit';
+import React, { useState } from 'react'
 import CustomBtnSubmit from '../ui/custom-btn-submit';
-
-
-interface FormValues {
-    email: string;
-    name: string;
-}
+import { Form } from '@/models/form';
+import axios from 'axios';
+import { useSnackbar } from '@/hooks/useSnackbar';
+import * as Yup from "yup";
 
 interface Props {
     isDesktop: boolean
 }
 
 const MainPageForm = ({ isDesktop }: Props) => {
-    const initialValues: FormValues = {
+    const initialValues: Form = {
         email: "",
         name: ""
     };
 
+    const { openSnackbar, closeSnackbar, open, message } = useSnackbar();
+    const [isSubmitted, setIsSubmitted] = useState(false);
+
+
     const formik = useFormik({
         initialValues: initialValues,
+        validationSchema: Yup.object().shape({
+            email: Yup.string().email('Неправильная почта').required('Поле должно быть заполнено'),
+            name: Yup.string().required('Поле должно быть заполнено'),
+        }),
         onSubmit: (values) => {
-            alert(JSON.stringify(values, null, 2));
+            axios.post("/api/form", values)
+                .then((res) => {
+                    openSnackbar("Вы успешно зарегистрировались!")
+                })
+                .finally(() => {
+                    setIsSubmitted(true)
+                });
         },
     });
 
@@ -49,6 +60,7 @@ const MainPageForm = ({ isDesktop }: Props) => {
                                 borderRadius: "3px"
                             },
                         }}
+                        disabled={isSubmitted}
                     />
                 </Stack>
 
@@ -72,12 +84,18 @@ const MainPageForm = ({ isDesktop }: Props) => {
                                 borderRadius: "3px"
                             },
                         }}
+                        disabled={isSubmitted}
                     />
                 </Stack>
                 <Stack sx={{ width: "100%", alignItems: "center" }}>
-                    <CustomBtnSubmit title='ПОЛУЧИТЬ ПОДАРОК' height='70px' minWidth={"309px"} />
+                    <CustomBtnSubmit title='ПОЛУЧИТЬ ПОДАРОК' height='70px' minWidth={"309px"} disabled={isSubmitted} />
                 </Stack>
             </Stack>
+            <Snackbar open={open} autoHideDuration={6000} onClose={closeSnackbar}>
+                <Alert onClose={closeSnackbar} severity="success" sx={{ width: '100%' }}>
+                    {message}
+                </Alert>
+            </Snackbar>
         </form>
     )
 }
