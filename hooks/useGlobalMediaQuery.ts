@@ -2,7 +2,7 @@ import { useMediaQuery, useTheme } from "@mui/material";
 
 const useGlobalMediaQuery = () => {
   const theme = useTheme();
-  const isDesktop = useMediaQuery("(min-width:700px)");
+  const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
 
   return { isDesktop };
 };

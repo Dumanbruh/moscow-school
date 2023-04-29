@@ -15,7 +15,7 @@ const Navbar = () => {
                     background: "linear-gradient(90deg, #FFD324 0%, #FF8900 100%)",
                     justifyContent: "center",
                     alignItems: "center",
-                    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"
+                    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
                 }}>
                 <Box
                     component={"img"}
@@ -70,7 +70,8 @@ const Navbar = () => {
                 background: "linear-gradient(90deg, #FFD324 0%, #FF8900 100%)",
                 justifyContent: "center",
                 alignItems: "center",
-                boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"
+                boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                px: "18px"
             }}>
             <Box
                 component={"img"}

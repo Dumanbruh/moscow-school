@@ -15,7 +15,6 @@ interface Props {
 }
 
 const MainPageForm = ({ isDesktop }: Props) => {
-
     const initialValues: FormValues = {
         email: "",
         name: ""
@@ -30,7 +29,7 @@ const MainPageForm = ({ isDesktop }: Props) => {
 
     return (
         <form onSubmit={formik.handleSubmit}>
-            <Stack spacing={"24px"} sx={{ minWidth: isDesktop ? "446px" : "100%" }}>
+            <Stack spacing={"24px"} sx={{ minWidth: isDesktop ? "446px" : "100%", display: "block" }}>
                 <Stack spacing={"6px"}>
                     <Typography variant='fieldHeader' sx={{ fontSize: "24px" }}>
                         E-mail
@@ -79,9 +78,6 @@ const MainPageForm = ({ isDesktop }: Props) => {
                     <CustomBtnSubmit title='ПОЛУЧИТЬ ПОДАРОК' height='70px' minWidth={"309px"} />
                 </Stack>
             </Stack>
-            {/* <Button color="primary" variant="contained" fullWidth type="submit">
-                Submit
-            </Button> */}
         </form>
     )
 }

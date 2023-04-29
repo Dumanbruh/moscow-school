@@ -42,7 +42,7 @@ const RegisterBlock = ({ isDesktop }: RegisterProps) => {
             </Stack>
         </Box >
     ) : (
-        <Box height={1400} sx={{
+        <Box minHeight={1400} sx={{
             width: "100%",
         }}>
             <Stack spacing={"16px"} sx={{
@@ -50,47 +50,37 @@ const RegisterBlock = ({ isDesktop }: RegisterProps) => {
                 alignItems: "center",
                 pt: "100px",
                 px: "32px",
-                mb: "154px",
+                pb: "154px",
                 background: "linear-gradient(90.35deg, #FFD324 -71.13%, #FF9A08 39.11%, #FDAA4A 99.56%)",
                 position: "relative"
             }}>
                 <Box component={"img"} sx={{ position: "absolute", width: "29.5%", left: 0, top: 0, zIndex: 1 }} src={"images/bg/mobile/reg-top.png"} />
                 <Box component={"img"} sx={{ position: "absolute", right: 0, bottom: 0, zIndex: 1 }} src={"images/bg/mobile/reg-bottom.png"} />
-                <Stack sx={{
-                    maxWidth: "520px",
-                }}>
-                    <Box sx={{ textAlign: "right" }}>
-                        <Typography variant='formHeader' sx={{ fontSize: "32px", lineHeight: "60px", whiteSpace: "pre-line" }}>
-                            {`19 МАЯ
+
+                <Box sx={{ textAlign: "right" }}>
+                    <Typography variant='formHeader' sx={{ fontSize: "32px", lineHeight: "60px", whiteSpace: "pre-line" }}>
+                        {`19 МАЯ
                     ШКОЛЬНЫЙ ПРАЗДНИК 
                     СПОРТА`}
-                        </Typography>
-                    </Box>
-
-                    <Typography variant='body' sx={{
-                        fontSize: "24px",
-                        color: "#30303E",
-                        lineHeight: "32px",
-                        whiteSpace: "pre-line",
-                        textAlign: "justify"
-                    }}>
-                        {`Наше мероприятие соберет вместе учеников со всех уголков города, которые смогут показать свои спортивные таланты в футболе, баскетболе 3х3, ГТО, посетить мастер- классы и специализированные секции.
-                    А для гостей мы приготовили подароки от Московского спорта! Оставь свой адрес электронной почты и мы пригласим тебя в числе первых!`}
                     </Typography>
-                    <Stack sx={{
-                        width: "100%", alignItems: "center",
-                    }}>
-                        <Box
-                            component={"img"}
-                            src="/images/logos/form/present-logo.svg"
-                            sx={{
-                                maxHeight: "250px"
-                            }}
-                        />
-                    </Stack>
+                </Box>
 
-                    <MainPageForm isDesktop={isDesktop} />
+                <Typography variant='body' sx={{
+                    fontSize: "24px",
+                    color: "#30303E",
+                    lineHeight: "32px",
+                    whiteSpace: "pre-line",
+                    textAlign: "justify",
+                }}>
+                    {`Наше мероприятие соберет вместе учеников со всех уголков города, которые смогут показать свои спортивные таланты в футболе, баскетболе 3х3, ГТО, посетить мастер- классы и специализированные секции.
+                    А для гостей мы приготовили подароки от Московского спорта! Оставь свой адрес электронной почты и мы пригласим тебя в числе первых!`}
+                </Typography>
+
+                <Stack sx={{ width: "100%", justifyContent: "center", alignItems: "center" }}>
+                    <Box component={"img"} src={"/images/logos/form/present-logo.png"} />
                 </Stack>
+
+                <MainPageForm isDesktop={isDesktop} />
             </Stack>
         </Box >
     )
