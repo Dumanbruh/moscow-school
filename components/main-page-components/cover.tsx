@@ -265,7 +265,7 @@ const Cover = ({ isDesktop }: CoverProps) => {
                             background: "linear-gradient(90deg, #FF6373 0%, #CC1427 100%)",
                             position: "relative"
                         }}>
-                        <Box component={"img"} sx={{ position: "absolute", height: "100%", width: "100%", left: 0, bottom: 0, zIndex: 1 }} src={"images/bg/mobile/cover/RightBoy.png"} />
+                        <Box component={"img"} sx={{ position: "absolute", height: "100%", width: "100%", right: 0, bottom: 0, zIndex: 1 }} src={"images/bg/mobile/cover/RightBoy.png"} />
                     </Stack>
                     <Stack sx={{
                         width: "100%", pt: "25%",

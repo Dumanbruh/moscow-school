@@ -196,8 +196,7 @@ const Footer = () => {
                         height: "100%",
                         justifyContent: "center",
                         alignItems: "center",
-                        py: "23px", 
-                        px: "18px",
+                        py: "23px",
                     }}>
                     <Box
                         component={"img"}
