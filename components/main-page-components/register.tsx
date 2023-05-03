@@ -11,12 +11,22 @@ interface RegisterProps {
 const RegisterBlock = ({ isDesktop }: RegisterProps) => {
     return isDesktop ? (
         <Box height={900} sx={{
-            backgroundImage: "url(/images/bg/reg-bg.png)",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "100% 100%",
             width: "100%",
-            position: "relative"
+            position: "relative", background: "linear-gradient(90.35deg, #FFD324 -71.13%, #FF9A08 39.11%, #FDAA4A 99.56%)"
         }}>
+            <Box component={"img"} sx={{ position: "absolute", left: 0, top: 0 }} src={"images/bg/desktop/reg/reg-top.png"} />
+            <Box component={"img"} sx={{ position: "absolute", left: 0, bottom: 0 }} src={"images/bg/desktop/reg/half-logo.png"} />
+            <Box component={"img"} sx={{ position: "absolute", right: 0, bottom: 0 }} src={"images/bg/desktop/reg/reg-bottom.png"} />
+
+            <Stack sx={{
+                width: "30%",
+                position: "absolute",
+                height: "100%",
+                alignItems: 'center',
+                justifyContent: "center"
+            }}>
+                <Box component={"img"} src={"images/logos/form/present-logo.png"} />
+            </Stack>
             <Stack spacing={"27px"} sx={{
                 width: "812px", position: "absolute", right: 0,
                 mr: "150px", pt: "96px",
@@ -54,8 +64,8 @@ const RegisterBlock = ({ isDesktop }: RegisterProps) => {
                 background: "linear-gradient(90.35deg, #FFD324 -71.13%, #FF9A08 39.11%, #FDAA4A 99.56%)",
                 position: "relative"
             }}>
-                <Box component={"img"} sx={{ position: "absolute", width: "29.5%", left: 0, top: 0, zIndex: 1 }} src={"images/bg/mobile/reg-top.png"} />
-                <Box component={"img"} sx={{ position: "absolute", right: 0, bottom: 0, zIndex: 1 }} src={"images/bg/mobile/reg-bottom.png"} />
+                <Box component={"img"} sx={{ position: "absolute", width: "46.8%", height: "20%", left: 0, top: 0, zIndex: 1 }} src={"images/bg/mobile/reg/reg-top.png"} />
+                <Box component={"img"} sx={{ position: "absolute", right: 0, bottom: 0, zIndex: 1 }} src={"images/bg/mobile/reg/reg-bottom.png"} />
 
                 <Box sx={{ textAlign: "right" }}>
                     <Typography variant='formHeader' sx={{ fontSize: "32px", lineHeight: "60px", whiteSpace: "pre-line" }}>

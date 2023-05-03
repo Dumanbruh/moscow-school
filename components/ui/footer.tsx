@@ -45,19 +45,41 @@ const Footer = () => {
 
                         <iframe src="https://yandex.com/map-widget/v1/?um=constructor%3A48d48ecdf9dac9ca29b98da2f451f4241a37973675f422de5a973a001b82195e&amp;source=constructor" width="591" height="449" frameBorder="0"></iframe>
                     </Stack>
-
                 </Container >
             </Box>
 
-            <Stack height={90} direction={"row"} sx={{ borderTop: "2px solid rgba(146, 146, 146, 0.2)" }}>
-                <Stack width={"51%"}
+            <Stack height={90} direction={"row"} sx={{ borderTop: "2px solid rgba(146, 146, 146, 0.2)", width: "100%", position: "relative" }}>
+                <Stack sx={{
+                    position: "absolute",
+                    width: "100%", justifyContent: "center", alignItems: "center", top: "-35%"
+                }}>
+                    <Box sx={{ background: "#01B0AE", px: "11px", py: "13px" }} onClick={() => {
+                        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+                    }}>
+                        <Box
+                            component={"img"}
+                            src="/images/logos/footer/arrow.png"
+                            sx={{
+                                height: "23px",
+                            }}
+                        />
+                    </Box>
+                </Stack>
+                <Stack width={"100%"}
                     direction={"row"}
                     spacing={"25px"}
                     sx={{
                         height: "100%",
-                        justifyContent: "center",
+                        pl: "78px",
                         alignItems: "center",
                     }}>
+                    <Box
+                        component={"img"}
+                        src="/images/logos/footer/complex-logo.svg"
+                        sx={{
+                            maxHeight: "40px"
+                        }}
+                    />
                     <Box
                         component={"img"}
                         src="/images/logos/footer/department-logo.svg"
@@ -67,7 +89,7 @@ const Footer = () => {
                     />
                     <Box
                         component={"img"}
-                        src="/images/logos/footer/complex-logo.svg"
+                        src="/images/logos/footer/mossport-logo.svg"
                         sx={{
                             maxHeight: "40px"
                         }}
@@ -81,22 +103,25 @@ const Footer = () => {
                     />
                     <Box
                         component={"img"}
-                        src="/images/logos/footer/mossport-logo.svg"
+                        src="/images/logos/footer/100-years-logo.svg"
                         sx={{
                             maxHeight: "40px"
                         }}
                     />
                     <Box
                         component={"img"}
-                        src="/images/logos/footer/100-years-logo.svg"
+                        src="/images/logos/footer/patriot-logo.svg"
                         sx={{
                             maxHeight: "40px"
                         }}
                     />
-                </Stack>
-                <Stack width={"49%"} sx={{
-                }}>
-
+                    <Box
+                        component={"img"}
+                        src="/images/logos/footer/moskvich-logo.svg"
+                        sx={{
+                            maxHeight: "40px"
+                        }}
+                    />
                 </Stack>
             </Stack>
         </Stack >
@@ -147,53 +172,87 @@ const Footer = () => {
             </Stack >
 
 
-            <Stack height={90} direction={"row"} sx={{ borderTop: "2px solid rgba(146, 146, 146, 0.2)", py: "23px", px: "18px" }}>
+            <Stack height={90} direction={"row"} sx={{ borderTop: "2px solid rgba(146, 146, 146, 0.2)", position: "relative" }}>
+                <Stack sx={{
+                    position: "absolute",
+                    width: "100%", justifyContent: "center", alignItems: "center", top: "-35%"
+                }}>
+                    <Box sx={{ background: "#01B0AE", px: "8px", py: "10px" }} onClick={() => {
+                        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+                    }}>
+                        <Box
+                            component={"img"}
+                            src="/images/logos/footer/arrow.png"
+                            sx={{
+                                height: "23px",
+                            }}
+                        />
+                    </Box>
+                </Stack>
                 <Stack width={"100%"}
                     direction={"row"}
-                    spacing={1}
+                    spacing={"16px"}
                     sx={{
                         height: "100%",
                         justifyContent: "center",
                         alignItems: "center",
+                        py: "23px", 
+                        px: "18px",
                     }}>
-                    <Box
-                        component={"img"}
-                        src="/images/logos/footer/department-logo.svg"
-                        sx={{
-                            maxHeight: "30px",
-                            width: "20%"
-                        }}
-                    />
                     <Box
                         component={"img"}
                         src="/images/logos/footer/complex-logo.svg"
                         sx={{
-                            maxHeight: "30px",
-                            width: "20%"
+                            maxHeight: "39px",
+                            width: "15%",
                         }}
                     />
                     <Box
                         component={"img"}
-                        src="/images/logos/footer/moscow-educ-logo.svg"
+                        src="/images/logos/footer/department-logo.svg"
                         sx={{
-                            maxHeight: "30px",
-                            width: "20%"
+                            maxHeight: "39px",
+                            width: "15%",
                         }}
                     />
                     <Box
                         component={"img"}
                         src="/images/logos/footer/mossport-logo.svg"
                         sx={{
-                            maxHeight: "30px",
-                            width: "20%"
+                            maxHeight: "39px",
+                            width: "15%",
+                        }}
+                    />
+                    <Box
+                        component={"img"}
+                        src="/images/logos/footer/moscow-educ-logo.svg"
+                        sx={{
+                            maxHeight: "39px",
+                            width: "15%",
                         }}
                     />
                     <Box
                         component={"img"}
                         src="/images/logos/footer/100-years-logo.svg"
                         sx={{
-                            maxHeight: "30px",
-                            width: "20%"
+                            maxHeight: "39px",
+                            width: "15%",
+                        }}
+                    />
+                    <Box
+                        component={"img"}
+                        src="/images/logos/footer/patriot-logo.svg"
+                        sx={{
+                            maxHeight: "39px",
+                            width: "15%",
+                        }}
+                    />
+                    <Box
+                        component={"img"}
+                        src="/images/logos/footer/moskvich-logo.svg"
+                        sx={{
+                            maxHeight: "39px",
+                            width: "15%",
                         }}
                     />
                 </Stack>
