@@ -1,4 +1,4 @@
-import { Box, Stack, Typography } from '@mui/material'
+import { Box, Stack, Typography, useMediaQuery } from '@mui/material'
 import React from 'react'
 
 interface CoverProps {
@@ -7,6 +7,9 @@ interface CoverProps {
 
 
 const Cover = ({ isDesktop }: CoverProps) => {
+
+    const isMobile = useMediaQuery('(min-width:600px)')
+
     return isDesktop ? (
         <Stack>
             <Stack height={120} direction={"row"} sx={{
@@ -24,6 +27,7 @@ const Cover = ({ isDesktop }: CoverProps) => {
                     <Box
                         component={"img"}
                         src="/images/logos/navbar/complex-logo.svg"
+                        onClick={() => { window.open('https://www.mos.ru/donm/', '_blank')?.focus() }}
                         sx={{
                             maxHeight: "34px"
                         }}
@@ -31,6 +35,7 @@ const Cover = ({ isDesktop }: CoverProps) => {
                     <Box
                         component={"img"}
                         src="/images/logos/navbar/department-logo.svg"
+                        onClick={() => { window.open('https://www.mos.ru/moskomsport/', '_blank')?.focus() }}
                         sx={{
                             maxHeight: "34px"
                         }}
@@ -38,6 +43,7 @@ const Cover = ({ isDesktop }: CoverProps) => {
                     <Box
                         component={"img"}
                         src="/images/logos/navbar/mossport-logo.svg"
+                        onClick={() => { window.open('https://moscow.sport', '_blank')?.focus() }}
                         sx={{
                             maxHeight: "34px"
                         }}
@@ -45,6 +51,7 @@ const Cover = ({ isDesktop }: CoverProps) => {
                     <Box
                         component={"img"}
                         src="/images/logos/navbar/moscow-educ-logo.svg"
+                        onClick={() => { window.open('https://shkolamoskva.ru/', '_blank')?.focus() }}
                         sx={{
                             maxHeight: "34px"
                         }}
@@ -52,6 +59,7 @@ const Cover = ({ isDesktop }: CoverProps) => {
                     <Box
                         component={"img"}
                         src="/images/logos/navbar/100-years-logo.svg"
+                        onClick={() => { window.open('https://100.moscow.sport', '_blank')?.focus() }}
                         sx={{
                             maxHeight: "34px"
                         }}
@@ -59,6 +67,7 @@ const Cover = ({ isDesktop }: CoverProps) => {
                     <Box
                         component={"img"}
                         src="/images/logos/navbar/patriot-logo.svg"
+                        onClick={() => { window.open('https://patriotsport.moscow/', '_blank')?.focus() }}
                         sx={{
                             maxHeight: "34px"
                         }}
@@ -66,6 +75,7 @@ const Cover = ({ isDesktop }: CoverProps) => {
                     <Box
                         component={"img"}
                         src="/images/logos/navbar/moskvich-logo.svg"
+                        onClick={() => { window.open('https://moskvich.mossport.ru/', '_blank')?.focus() }}
                         sx={{
                             maxHeight: "34px"
                         }}
@@ -97,7 +107,7 @@ const Cover = ({ isDesktop }: CoverProps) => {
                         <Box component={"img"} src={"images/bg/desktop/cover/Logo.svg"} />
                     </Stack>
                     <Stack sx={{
-                        width: "100%", height: "100%", justifyContent: "center", alignItems: "center", position: "absolute", zIndex: 2,
+                        width: "100%", height: "100%", justifyContent: "center", alignItems: "center", position: "absolute", zIndex: 3,
                     }} spacing={"78px"}>
                         <Stack>
                             <Typography variant='cover' sx={{ fontSize: "187px", maxWidth: "625px" }}>ФЕСТИВАЛЬ</Typography>
@@ -123,7 +133,7 @@ const Cover = ({ isDesktop }: CoverProps) => {
                             component={"img"}
                             src={"images/bg/desktop/cover/Details.png"}
                         />
-                        <Box component={"img"} sx={{ position: "absolute", height: "100%", left: 0, }} src={"images/bg/desktop/cover/LeftGirl.png"} />
+                        <Box component={"img"} sx={{ position: "absolute", height: "100%", left: 0, zIndex: 2 }} src={"images/bg/desktop/cover/LeftGirl.png"} />
                     </Stack>
                     <Stack
                         width={"50%"}
@@ -132,7 +142,7 @@ const Cover = ({ isDesktop }: CoverProps) => {
                             background: "linear-gradient(90deg, #FF6373 0%, #CC1427 100%)",
                             position: "relative"
                         }}>
-                        <Box component={"img"} sx={{ position: "absolute", height: "100%", right: 0, }} src={"images/bg/desktop/cover/RightBoy.png"} />
+                        <Box component={"img"} sx={{ position: "absolute", height: "100%", right: 0, zIndex: 1 }} src={"images/bg/desktop/cover/RightBoy.png"} />
                     </Stack>
                 </Stack>
             </Box>
@@ -157,6 +167,7 @@ const Cover = ({ isDesktop }: CoverProps) => {
                     <Box
                         component={"img"}
                         src="/images/logos/navbar/complex-logo.svg"
+                        onClick={() => { window.open('https://www.mos.ru/donm/', '_blank')?.focus() }}
                         sx={{
                             maxHeight: "30px",
                             width: "15%"
@@ -165,6 +176,7 @@ const Cover = ({ isDesktop }: CoverProps) => {
                     <Box
                         component={"img"}
                         src="/images/logos/navbar/department-logo.svg"
+                        onClick={() => { window.open('https://www.mos.ru/moskomsport/', '_blank')?.focus() }}
                         sx={{
                             maxHeight: "30px",
                             width: "15%"
@@ -173,6 +185,7 @@ const Cover = ({ isDesktop }: CoverProps) => {
                     <Box
                         component={"img"}
                         src="/images/logos/navbar/mossport-logo.svg"
+                        onClick={() => { window.open('https://moscow.sport', '_blank')?.focus() }}
                         sx={{
                             maxHeight: "30px",
                             width: "15%"
@@ -182,6 +195,7 @@ const Cover = ({ isDesktop }: CoverProps) => {
                     <Box
                         component={"img"}
                         src="/images/logos/navbar/moscow-educ-logo.svg"
+                        onClick={() => { window.open('https://shkolamoskva.ru/', '_blank')?.focus() }}
                         sx={{
                             maxHeight: "30px",
                             width: "15%"
@@ -191,6 +205,7 @@ const Cover = ({ isDesktop }: CoverProps) => {
                     <Box
                         component={"img"}
                         src="/images/logos/navbar/100-years-logo.svg"
+                        onClick={() => { window.open('https://100.moscow.sport', '_blank')?.focus() }}
                         sx={{
                             maxHeight: "30px",
                             width: "15%"
@@ -200,6 +215,7 @@ const Cover = ({ isDesktop }: CoverProps) => {
                     <Box
                         component={"img"}
                         src="/images/logos/navbar/patriot-logo.svg"
+                        onClick={() => { window.open('https://patriotsport.moscow/', '_blank')?.focus() }}
                         sx={{
                             maxHeight: "30px",
                             width: "15%"
@@ -208,6 +224,7 @@ const Cover = ({ isDesktop }: CoverProps) => {
                     <Box
                         component={"img"}
                         src="/images/logos/navbar/moskvich-logo.svg"
+                        onClick={() => { window.open('https://moskvich.mossport.ru/', '_blank')?.focus() }}
                         sx={{
                             maxHeight: "30px",
                             width: "15%"
@@ -236,6 +253,8 @@ const Cover = ({ isDesktop }: CoverProps) => {
                         width: "100%",
                         position: "absolute",
                         height: "100%",
+                        left: 0,
+                        right: 0,
                         zIndex: 1,
                         alignItems: 'center',
                         justifyContent: 'center'
@@ -243,7 +262,7 @@ const Cover = ({ isDesktop }: CoverProps) => {
                         <Box
                             component={"img"}
                             sx={{
-                                height: "100%", left: 0, maxWidth: "90%", maxHeight: "488px"
+                                height: "50%", maxHeight: "388px"
                             }}
                             src={"images/bg/desktop/cover/Details.png"}
                         />
@@ -256,7 +275,8 @@ const Cover = ({ isDesktop }: CoverProps) => {
                             background: "linear-gradient(90deg, #FFD324 0%, #FF8900 100%)",
                             position: "relative"
                         }}>
-                        <Box component={"img"} sx={{ position: "absolute", height: "100%", width: "100%", left: 0, bottom: 0, zIndex: 1 }} src={"images/bg/mobile/cover/LeftGirl.png"} />
+                        <Box component={"img"} sx={{ position: "absolute", height: "100%", left: isMobile ? 0 : "-45%", bottom: "-59.1%", zIndex: 2 }} src={"images/bg/mobile/cover/LeftGirl.png"} />
+                        <Box component={"img"} sx={{ position: "absolute", left: 0, top: 0, zIndex: 2 }} src={"images/bg/mobile/cover/TopleftClouds.png"} />
                     </Stack>
                     <Stack
                         width={"50%"}
@@ -265,7 +285,8 @@ const Cover = ({ isDesktop }: CoverProps) => {
                             background: "linear-gradient(90deg, #FF6373 0%, #CC1427 100%)",
                             position: "relative"
                         }}>
-                        <Box component={"img"} sx={{ position: "absolute", height: "100%", width: "100%", left: 0, bottom: 0, zIndex: 1 }} src={"images/bg/mobile/cover/RightBoy.png"} />
+                        <Box component={"img"} sx={{ position: "absolute", height: "50%", right: isMobile ? 0 : "-45%", bottom: 0, zIndex: 12 }} src={"images/bg/mobile/cover/RightBoy.png"} />
+                        <Box component={"img"} sx={{ position: "absolute", right: 0, top: 0, zIndex: 2 }} src={"images/bg/mobile/cover/TopRightClouds.png"} />
                     </Stack>
                     <Stack sx={{
                         width: "100%", pt: "25%",

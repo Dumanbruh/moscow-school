@@ -76,6 +76,7 @@ const Footer = () => {
                     <Box
                         component={"img"}
                         src="/images/logos/footer/complex-logo.svg"
+                        onClick={() => { window.open('https://www.mos.ru/donm/', '_blank')?.focus() }}
                         sx={{
                             maxHeight: "40px"
                         }}
@@ -83,6 +84,7 @@ const Footer = () => {
                     <Box
                         component={"img"}
                         src="/images/logos/footer/department-logo.svg"
+                        onClick={() => { window.open('https://www.mos.ru/moskomsport/', '_blank')?.focus() }}
                         sx={{
                             maxHeight: "40px",
                         }}
@@ -90,6 +92,7 @@ const Footer = () => {
                     <Box
                         component={"img"}
                         src="/images/logos/footer/mossport-logo.svg"
+                        onClick={() => { window.open('https://moscow.sport', '_blank')?.focus() }}
                         sx={{
                             maxHeight: "40px"
                         }}
@@ -97,6 +100,7 @@ const Footer = () => {
                     <Box
                         component={"img"}
                         src="/images/logos/footer/moscow-educ-logo.svg"
+                        onClick={() => { window.open('https://shkolamoskva.ru/', '_blank')?.focus() }}
                         sx={{
                             maxHeight: "40px"
                         }}
@@ -104,6 +108,7 @@ const Footer = () => {
                     <Box
                         component={"img"}
                         src="/images/logos/footer/100-years-logo.svg"
+                        onClick={() => { window.open('https://100.moscow.sport', '_blank')?.focus() }}
                         sx={{
                             maxHeight: "40px"
                         }}
@@ -111,6 +116,7 @@ const Footer = () => {
                     <Box
                         component={"img"}
                         src="/images/logos/footer/patriot-logo.svg"
+                        onClick={() => { window.open('https://patriotsport.moscow/', '_blank')?.focus() }}
                         sx={{
                             maxHeight: "40px"
                         }}
@@ -118,6 +124,7 @@ const Footer = () => {
                     <Box
                         component={"img"}
                         src="/images/logos/footer/moskvich-logo.svg"
+                        onClick={() => { window.open('https://moskvich.mossport.ru/', '_blank')?.focus() }}
                         sx={{
                             maxHeight: "40px"
                         }}
@@ -191,67 +198,73 @@ const Footer = () => {
                 </Stack>
                 <Stack width={"100%"}
                     direction={"row"}
-                    spacing={"16px"}
+                    spacing={1}
                     sx={{
                         height: "100%",
                         justifyContent: "center",
                         alignItems: "center",
-                        py: "23px", 
-                        px: "18px",
+                        px: "18px"
                     }}>
                     <Box
                         component={"img"}
                         src="/images/logos/footer/complex-logo.svg"
+                        onClick={() => { window.open('https://www.mos.ru/donm/', '_blank')?.focus() }}
                         sx={{
-                            maxHeight: "39px",
+                            maxHeight: "30px",
                             width: "15%",
                         }}
                     />
                     <Box
                         component={"img"}
                         src="/images/logos/footer/department-logo.svg"
+                        onClick={() => { window.open('https://www.mos.ru/moskomsport/', '_blank')?.focus() }}
                         sx={{
-                            maxHeight: "39px",
+                            maxHeight: "30px",
                             width: "15%",
                         }}
                     />
                     <Box
                         component={"img"}
                         src="/images/logos/footer/mossport-logo.svg"
+                        onClick={() => { window.open('https://moscow.sport', '_blank')?.focus() }}
                         sx={{
-                            maxHeight: "39px",
+                            maxHeight: "30px",
                             width: "15%",
                         }}
                     />
                     <Box
                         component={"img"}
                         src="/images/logos/footer/moscow-educ-logo.svg"
+                        onClick={() => { window.open('https://shkolamoskva.ru/', '_blank')?.focus() }}
                         sx={{
-                            maxHeight: "39px",
+                            maxHeight: "30px",
                             width: "15%",
                         }}
                     />
                     <Box
                         component={"img"}
                         src="/images/logos/footer/100-years-logo.svg"
+                        onClick={() => { window.open('https://100.moscow.sport', '_blank')?.focus() }}
                         sx={{
-                            maxHeight: "39px",
+                            maxHeight: "30px",
                             width: "15%",
                         }}
                     />
                     <Box
                         component={"img"}
                         src="/images/logos/footer/patriot-logo.svg"
+                        onClick={() => { window.open('https://patriotsport.moscow/', '_blank')?.focus() }}
                         sx={{
-                            maxHeight: "39px",
+                            maxHeight: "30px",
                             width: "15%",
                         }}
                     />
                     <Box
                         component={"img"}
                         src="/images/logos/footer/moskvich-logo.svg"
+                        onClick={() => { window.open('https://moskvich.mossport.ru/', '_blank')?.focus() }}
                         sx={{
-                            maxHeight: "39px",
+                            maxHeight: "30px",
                             width: "15%",
                         }}
                     />

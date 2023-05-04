@@ -1,4 +1,4 @@
-import { Box, Stack, Typography } from '@mui/material'
+import { Box, Stack, Typography, useMediaQuery } from '@mui/material'
 import React from 'react'
 import MainPageForm from '../forms/main-page-form'
 import { ST } from 'next/dist/shared/lib/utils';
@@ -9,6 +9,8 @@ interface RegisterProps {
 
 
 const RegisterBlock = ({ isDesktop }: RegisterProps) => {
+    const isMobile = useMediaQuery('(min-width:600px)')
+
     return isDesktop ? (
         <Box height={900} sx={{
             width: "100%",
@@ -54,19 +56,21 @@ const RegisterBlock = ({ isDesktop }: RegisterProps) => {
     ) : (
         <Box minHeight={1400} sx={{
             width: "100%",
+            position: "relative",
+            background: "linear-gradient(90.35deg, #FFD324 -71.13%, #FF9A08 39.11%, #FDAA4A 99.56%)"
         }}>
+            {/* <Stack sx={{ width: "50%", position: "absolute", left: 0, top: 0, zIndex: 1 }}>
+                <Box component={"img"} sx={{ maxWidth: "70%" }} src={"images/bg/mobile/reg/reg-top.png"} />
+            </Stack> */}
+            <Box component={"img"} sx={{ position: "absolute", right: 0, bottom: 0, zIndex: 1 }} src={"images/bg/mobile/reg/reg-bottom.png"} />
             <Stack spacing={"16px"} sx={{
                 width: "100%",
+                heigth: "100%",
                 alignItems: "center",
                 pt: "100px",
                 px: "32px",
                 pb: "154px",
-                background: "linear-gradient(90.35deg, #FFD324 -71.13%, #FF9A08 39.11%, #FDAA4A 99.56%)",
-                position: "relative"
             }}>
-                <Box component={"img"} sx={{ position: "absolute", width: "46.8%", height: "20%", left: 0, top: 0, zIndex: 1 }} src={"images/bg/mobile/reg/reg-top.png"} />
-                <Box component={"img"} sx={{ position: "absolute", right: 0, bottom: 0, zIndex: 1 }} src={"images/bg/mobile/reg/reg-bottom.png"} />
-
                 <Box sx={{ textAlign: "right" }}>
                     <Typography variant='formHeader' sx={{ fontSize: "32px", lineHeight: "60px", whiteSpace: "pre-line" }}>
                         {`19 МАЯ
