@@ -5,8 +5,8 @@ FROM --platform=linux/amd64 node:16-alpine AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
-# RUN npm config set ca=""
-# RUN npm set strict-ssl false
+RUN npm config set ca=""
+RUN npm set strict-ssl false
 
 # Install dependencies based on the preferred package manager
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
@@ -54,8 +54,8 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 USER nextjs
 
-EXPOSE 3002
+EXPOSE 3003
 
-ENV PORT 3002
+ENV PORT 3003
 
 CMD ["node", "server.js"]
