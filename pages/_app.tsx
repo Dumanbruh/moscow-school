@@ -7,6 +7,7 @@ import Footer from '@/components/ui/footer';
 import useGlobalMediaQuery from '@/hooks/useGlobalMediaQuery';
 import { Stack } from '@mui/material';
 import Script from 'next/script';
+import Cover from '@/components/ui/cover';
 
 export default function App({ Component, pageProps }: AppProps) {
   const { isDesktop } = useGlobalMediaQuery();
@@ -52,6 +53,7 @@ export default function App({ Component, pageProps }: AppProps) {
       }}
     />
     <ThemeProvider theme={theme}>
+      <Cover />
       <Component {...pageProps} />
       <Footer />
     </ThemeProvider>

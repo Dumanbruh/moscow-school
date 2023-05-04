@@ -1,14 +1,39 @@
+import useGlobalMediaQuery from '@/hooks/useGlobalMediaQuery';
 import { Box, Stack, Typography, useMediaQuery } from '@mui/material'
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react'
 
-interface CoverProps {
-    isDesktop: boolean;
-}
 
 
-const Cover = ({ isDesktop }: CoverProps) => {
 
-    const isMobile = useMediaQuery('(min-width:600px)')
+const Cover = () => {
+    const { isDesktop } = useGlobalMediaQuery();
+    const isMobile = useMediaQuery('(min-width:600px)');
+    const router = useRouter();
+
+    const links = [
+        {
+            text: "ГЛАВНАЯ",
+            link: "/"
+        },
+        {
+            text: "ШКОЛЬНЫЕ ЛИГИ",
+            link: "/leagues",
+        },
+        {
+            text: "ГТО",
+            link: "/gto"
+        },
+        {
+            text: "ТУРНИРЫ",
+            link: "/"
+        },
+        {
+            text: "МАСТЕР-КЛАССЫ",
+            link: "/"
+        },
+    ];
 
     return isDesktop ? (
         <Stack>
@@ -81,11 +106,20 @@ const Cover = ({ isDesktop }: CoverProps) => {
                         }}
                     />
                 </Stack>
-                <Stack width={"50%"} sx={{
-                    height: "100%",
-                    background: "linear-gradient(90deg, #FF6373 0%, #CC1427 100%)",
-                }}>
-
+                <Stack width={"50%"}
+                    direction={"row"}
+                    spacing={"48px"}
+                    sx={{
+                        height: "100%",
+                        background: "linear-gradient(90deg, #FF6373 0%, #CC1427 100%)",
+                        justifyContent: "center",
+                        alignItems: "center",
+                    }}>
+                    {links.map((link) => (
+                        <Box onClick={() => router.push(link.link)} sx={{ borderBottom: router.pathname === link.link ? "2px solid #01B4B1" : "none" }}>
+                            <Typography variant='header' sx={{ fontSize: "24px", lineHeight: "24px", cursor: "pointer" }} >{link.text}</Typography>
+                        </Box>
+                    ))}
                 </Stack>
             </Stack>
             <Box height={800} sx={{
@@ -146,7 +180,7 @@ const Cover = ({ isDesktop }: CoverProps) => {
                     </Stack>
                 </Stack>
             </Box>
-        </Stack>
+        </Stack >
 
     ) : (
         <Stack>
@@ -249,24 +283,18 @@ const Cover = ({ isDesktop }: CoverProps) => {
                     }}>
                         <Box component={"img"} maxWidth={"60%"} src={"images/bg/desktop/cover/Logo.svg"} />
                     </Stack>
-                    <Stack sx={{
-                        width: "100%",
-                        position: "absolute",
-                        height: "100%",
-                        left: 0,
-                        right: 0,
-                        zIndex: 1,
-                        alignItems: 'center',
-                        justifyContent: 'center'
-                    }}>
-                        <Box
-                            component={"img"}
-                            sx={{
-                                height: "50%", maxHeight: "388px"
-                            }}
-                            src={"images/bg/desktop/cover/Details.png"}
-                        />
-                    </Stack>
+
+                    <Box
+                        component={"img"}
+                        sx={{
+                            position: "absolute",
+                            top: "30%",
+                            zIndex: 1,
+                            maxHeight: "388px",
+                            width: "100%",
+                        }}
+                        src={"images/bg/mobile/cover/Details.png"}
+                    />
 
                     <Stack
                         width={"50%"}
