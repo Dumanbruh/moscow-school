@@ -5,12 +5,10 @@ import { Stack } from "@mui/system";
 
 
 export default function Home() {
-  const { isDesktop } = useGlobalMediaQuery();
 
 
   return (
     <>
-      <RegisterBlock isDesktop={isDesktop} />
     </>
   )
 }

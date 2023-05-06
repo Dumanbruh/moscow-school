@@ -72,7 +72,7 @@ const theme = createTheme({
     footerHeader: {
       fontFamily: "Gotham Pro Bold",
       fontWeight: 700,
-    }
+    },
   },
 });
 

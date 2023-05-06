@@ -1,8 +1,8 @@
 import useGlobalMediaQuery from '@/hooks/useGlobalMediaQuery';
-import { Box, Stack, Typography, useMediaQuery } from '@mui/material'
+import { Box, Button, Drawer, IconButton, Stack, SwipeableDrawer, Typography, useMediaQuery } from '@mui/material'
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React from 'react'
+import React, { useState } from 'react'
 
 
 
@@ -11,6 +11,7 @@ const Cover = () => {
     const { isDesktop } = useGlobalMediaQuery();
     const isMobile = useMediaQuery('(min-width:600px)');
     const router = useRouter();
+    const [open, setOpen] = useState(false);
 
     const links = [
         {
@@ -27,11 +28,11 @@ const Cover = () => {
         },
         {
             text: "ТУРНИРЫ",
-            link: "/"
+            link: "/tournaments"
         },
         {
             text: "МАСТЕР-КЛАССЫ",
-            link: "/"
+            link: "/master"
         },
     ];
 
@@ -189,81 +190,101 @@ const Cover = () => {
             }}>
                 <Stack width={"100%"}
                     direction={"row"}
-                    spacing={1}
                     sx={{
                         height: "100%",
                         background: "linear-gradient(90deg, #FFD324 0%, #FF8900 100%)",
-                        justifyContent: "center",
+                        justifyContent: "space-between",
                         alignItems: "center",
                         boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-                        px: "18px"
                     }}>
-                    <Box
-                        component={"img"}
-                        src="/images/logos/navbar/complex-logo.svg"
-                        onClick={() => { window.open('https://www.mos.ru/donm/', '_blank')?.focus() }}
-                        sx={{
-                            maxHeight: "30px",
-                            width: "15%"
+                    <Stack spacing={"16px"} sx={{ ml: isMobile ? "34px" : "0px" }}>
+                        <Stack direction={"row"} spacing={isMobile ? "40px" : "20px"}>
+                            <Box
+                                component={"img"}
+                                src="/images/logos/navbar/complex-logo.svg"
+                                onClick={() => { window.open('https://www.mos.ru/donm/', '_blank')?.focus() }}
+                                sx={{
+                                    maxHeight: "30px",
+                                }}
+                            />
+                            <Box
+                                component={"img"}
+                                src="/images/logos/navbar/mossport-logo.svg"
+                                onClick={() => { window.open('https://moscow.sport', '_blank')?.focus() }}
+                                sx={{
+                                    maxHeight: "30px",
+                                }}
+                            />
+                            <Box
+                                component={"img"}
+                                src="/images/logos/navbar/moscow-educ-logo.svg"
+                                onClick={() => { window.open('https://shkolamoskva.ru/', '_blank')?.focus() }}
+                                sx={{
+                                    maxHeight: "30px",
+                                }}
+                            />
+                        </Stack>
+                        <Stack direction={"row"} spacing={isMobile ? "16px" : "8px"}>
+                            <Box
+                                component={"img"}
+                                src="/images/logos/navbar/department-logo.svg"
+                                onClick={() => { window.open('https://www.mos.ru/moskomsport/', '_blank')?.focus() }}
+                                sx={{
+                                    maxHeight: "30px",
+                                }}
+                            />
+                            <Box
+                                component={"img"}
+                                src="/images/logos/navbar/100-years-logo.svg"
+                                onClick={() => { window.open('https://100.moscow.sport', '_blank')?.focus() }}
+                                sx={{
+                                    maxHeight: "30px",
+                                }}
+                            />
+                            <Box
+                                component={"img"}
+                                src="/images/logos/navbar/patriot-logo.svg"
+                                onClick={() => { window.open('https://patriotsport.moscow/', '_blank')?.focus() }}
+                                sx={{
+                                    maxHeight: "30px",
+                                }}
+                            />
+                            <Box
+                                component={"img"}
+                                src="/images/logos/navbar/moskvich-logo.svg"
+                                onClick={() => { window.open('https://moskvich.mossport.ru/', '_blank')?.focus() }}
+                                sx={{
+                                    maxHeight: "30px",
+                                }}
+                            />
+                        </Stack>
+                    </Stack>
+                    <IconButton sx={{ mr: isMobile ? "50px" : "0px" }} size="large" edge="start" onClick={() => setOpen(true)}>
+                        <Box
+                            component={"img"}
+                            src="/images/logos/navbar/navbar-logo.png"
+                        />
+                    </IconButton>
+                    <SwipeableDrawer
+                        anchor={"right"} PaperProps={{
+                            sx: {
+                                background: "linear-gradient(90deg, #FF6373 0%, #CC1427 100%)",
+                                width: "200px"
+                            }
                         }}
-                    />
-                    <Box
-                        component={"img"}
-                        src="/images/logos/navbar/department-logo.svg"
-                        onClick={() => { window.open('https://www.mos.ru/moskomsport/', '_blank')?.focus() }}
-                        sx={{
-                            maxHeight: "30px",
-                            width: "15%"
-                        }}
-                    />
-                    <Box
-                        component={"img"}
-                        src="/images/logos/navbar/mossport-logo.svg"
-                        onClick={() => { window.open('https://moscow.sport', '_blank')?.focus() }}
-                        sx={{
-                            maxHeight: "30px",
-                            width: "15%"
-
-                        }}
-                    />
-                    <Box
-                        component={"img"}
-                        src="/images/logos/navbar/moscow-educ-logo.svg"
-                        onClick={() => { window.open('https://shkolamoskva.ru/', '_blank')?.focus() }}
-                        sx={{
-                            maxHeight: "30px",
-                            width: "15%"
-
-                        }}
-                    />
-                    <Box
-                        component={"img"}
-                        src="/images/logos/navbar/100-years-logo.svg"
-                        onClick={() => { window.open('https://100.moscow.sport', '_blank')?.focus() }}
-                        sx={{
-                            maxHeight: "30px",
-                            width: "15%"
-
-                        }}
-                    />
-                    <Box
-                        component={"img"}
-                        src="/images/logos/navbar/patriot-logo.svg"
-                        onClick={() => { window.open('https://patriotsport.moscow/', '_blank')?.focus() }}
-                        sx={{
-                            maxHeight: "30px",
-                            width: "15%"
-                        }}
-                    />
-                    <Box
-                        component={"img"}
-                        src="/images/logos/navbar/moskvich-logo.svg"
-                        onClick={() => { window.open('https://moskvich.mossport.ru/', '_blank')?.focus() }}
-                        sx={{
-                            maxHeight: "30px",
-                            width: "15%"
-                        }}
-                    />
+                        onOpen={(e) => { }}
+                        open={open}
+                        onClose={() => setOpen(false)}>
+                        <Box sx={{ width: "100%", pt: "60px", pl: "30px" }} role="presentation">
+                            <Stack spacing={"48px"}>
+                                {links.map((link) => (
+                                    <Box onClick={() => router.push(link.link)}>
+                                        <Typography variant='header' sx={{ fontSize: "24px", lineHeight: "24px", cursor: "pointer", borderBottom: router.pathname === link.link ? "2px solid #01B4B1" : "none" }} >{link.text}</Typography>
+                                    </Box>
+                                ))}
+                            </Stack>
+                        </Box>
+                    </SwipeableDrawer>
                 </Stack>
             </Stack>
             <Box height={"900px"} sx={{
@@ -334,7 +355,7 @@ const Cover = () => {
                     </Stack>
                 </Stack>
             </Box>
-        </Stack>
+        </Stack >
 
     )
 }

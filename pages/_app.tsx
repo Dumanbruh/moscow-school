@@ -4,14 +4,12 @@ import Head from 'next/head'
 import { ThemeProvider } from "@mui/material/styles";
 import theme from '@/styles/theme';
 import Footer from '@/components/ui/footer';
-import useGlobalMediaQuery from '@/hooks/useGlobalMediaQuery';
-import { Stack } from '@mui/material';
 import Script from 'next/script';
 import Cover from '@/components/ui/cover';
+import 'swiper/css';
+import RegisterBlock from '@/components/main-page-components/register';
 
 export default function App({ Component, pageProps }: AppProps) {
-  const { isDesktop } = useGlobalMediaQuery();
-
   return <>
     <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -54,6 +52,7 @@ export default function App({ Component, pageProps }: AppProps) {
     />
     <ThemeProvider theme={theme}>
       <Cover />
+      <RegisterBlock />
       <Component {...pageProps} />
       <Footer />
     </ThemeProvider>
