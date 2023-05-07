@@ -124,6 +124,7 @@ const MasterBlock = ({ isDesktop }: Props) => {
                         {masters.map((master, i) => (
                             <SwiperSlide key={i} style={{ width: "400px" }}>
                                 <Card
+                                    type='master'
                                     isDesktop={isDesktop}
                                     name={master.name}
                                     img={master.img}

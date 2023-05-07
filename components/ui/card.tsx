@@ -8,9 +8,10 @@ interface Props {
     desc: string;
     img: string;
     date: string;
+    type: 'main' | 'tournament' | 'master'
 }
 
-const Card = ({ isDesktop, name, desc, img, date }: Props) => {
+const Card = ({ isDesktop, name, desc, img, date, type }: Props) => {
     return isDesktop ? (
         <Stack sx={{ minWidth: "1100px", background: "linear-gradient(90deg, #FFD324 0%, #FF8900 100%)", borderRadius: "32px", position: "relative" }} direction={"row"} spacing={"45px"}>
             <Box sx={{
@@ -42,16 +43,40 @@ const Card = ({ isDesktop, name, desc, img, date }: Props) => {
                 <Typography variant='body' sx={{ fontSize: "24px", height: name === 'Русская лапта' ? "260px" : "202px", lineHeight: "28.8px", whiteSpace: "pre-line" }}>
                     {`${desc}`}
                 </Typography>
-                <Stack direction={"row"} spacing={"30px"}>
-                    <CustomBtn height='96px' bg='linear-gradient(90deg, #FF6373 0%, #CC1427 100%)' onClick={() => { }} minWidth='255px'>
-                        <Typography variant='body' sx={{ color: "white", fontSize: "18px" }}>РЕГИСТРАЦИЯ</Typography>
-                    </CustomBtn>
-                    <CustomBtn height='96px' bg='white' onClick={() => { }} minWidth='255px'>
-                        <Typography variant='body' sx={{ color: "#563F42", fontSize: "18px" }}>БУДУ ЗРИТЕЛЕМ</Typography>
-                    </CustomBtn>
-                </Stack>
+                {type === 'main' && (
+                    <Stack direction={"row"} spacing={"30px"} sx={{ justifyContent: name !== "мастер-классы" ? 'flex-start' : 'center' }}>
+                        <CustomBtn height='96px' bg='linear-gradient(90deg, #FF6373 0%, #CC1427 100%)' onClick={() => { }} minWidth='255px'>
+                            <Typography variant='body' sx={{ color: "white", fontSize: "18px" }}>ПОДРОБНЕЕ</Typography>
+                        </CustomBtn>
+                        {name !== "мастер-классы" && (
+                            <CustomBtn height='96px' bg='white' onClick={() => { }} minWidth='255px'>
+                                <Typography variant='body' sx={{ color: "#563F42", fontSize: "18px" }}>БУДУ ЗРИТЕЛЕМ</Typography>
+                            </CustomBtn>
+                        )}
+                    </Stack>
+                )}
+                {type === 'tournament' && (
+                    <Stack direction={"row"} spacing={"30px"} sx={{ justifyContent: name !== "мастер-классы" ? 'flex-start' : 'center' }}>
+                        <CustomBtn height='96px' bg='linear-gradient(90deg, #FF6373 0%, #CC1427 100%)' onClick={() => { }} minWidth='255px'>
+                            <Typography variant='body' sx={{ color: "white", fontSize: "18px" }}>ПОДРОБНЕЕ</Typography>
+                        </CustomBtn>
+                        <CustomBtn height='96px' bg='white' onClick={() => { }} minWidth='255px'>
+                            <Typography variant='body' sx={{ color: "#563F42", fontSize: "18px" }}>БУДУ ЗРИТЕЛЕМ</Typography>
+                        </CustomBtn>
+                    </Stack>
+                )}
+                {type === 'master' && (
+                    <Stack direction={"row"} spacing={"30px"} sx={{ justifyContent: name !== "мастер-классы" ? 'flex-start' : 'center' }}>
+                        <CustomBtn height='96px' bg='linear-gradient(90deg, #FF6373 0%, #CC1427 100%)' onClick={() => { }} minWidth='255px'>
+                            <Typography variant='body' sx={{ color: "white", fontSize: "18px" }}>ЗАПИСАТЬСЯ</Typography>
+                        </CustomBtn>
+                        <CustomBtn height='96px' bg='white' onClick={() => { }} minWidth='255px'>
+                            <Typography variant='body' sx={{ color: "#563F42", fontSize: "18px" }}>БУДУ ЗРИТЕЛЕМ</Typography>
+                        </CustomBtn>
+                    </Stack>
+                )}
             </Stack>
-        </Stack>
+        </Stack >
     ) : (
         <Stack sx={{
             background: "linear-gradient(90deg, #FFD324 0%, #FF8900 100%)", borderRadius: "32px", pb: "64px", position: "relative", zIndex: 2, maxWidth: "400px", height: "100%"
@@ -87,14 +112,40 @@ const Card = ({ isDesktop, name, desc, img, date }: Props) => {
                 <Typography variant='body' sx={{ fontSize: "16px", lineHeight: "19px", minHeight: "305px", whiteSpace: "pre-line" }}>
                     {`${desc}`}
                 </Typography>
-                <Stack direction={"column"} spacing={"16px"} sx={{ px: "11%", }}>
-                    <CustomBtn height='64px' bg='linear-gradient(90deg, #FF6373 0%, #CC1427 100%)' onClick={() => { }}>
-                        <Typography variant='body' sx={{ color: "white", fontSize: "18px" }}>ПОДРОБНЕЕ</Typography>
-                    </CustomBtn>
-                    <CustomBtn height='64px' bg='white' onClick={() => { }}>
-                        <Typography variant='body' sx={{ color: "#563F42", fontSize: "18px" }}>БУДУ ЗРИТЕЛЕМ</Typography>
-                    </CustomBtn>
-                </Stack>
+
+                {type === 'main' && (
+                    <Stack direction={"column"} spacing={"16px"} sx={{ px: "11%", justifyContent: 'center', minHeight: '144px' }}>
+                        <CustomBtn height='64px' bg='linear-gradient(90deg, #FF6373 0%, #CC1427 100%)' onClick={() => { }}>
+                            <Typography variant='body' sx={{ color: "white", fontSize: "18px" }}>ПОДРОБНЕЕ</Typography>
+                        </CustomBtn>
+                        {name !== "мастер-классы" && (
+                            <CustomBtn height='64px' bg='white' onClick={() => { }}>
+                                <Typography variant='body' sx={{ color: "#563F42", fontSize: "18px" }}>БУДУ ЗРИТЕЛЕМ</Typography>
+                            </CustomBtn>
+                        )}
+
+                    </Stack>
+                )}
+                {type === 'tournament' && (
+                    <Stack direction={"column"} spacing={"16px"} sx={{ px: "11%", justifyContent: 'center', minHeight: '144px' }}>
+                        <CustomBtn height='64px' bg='linear-gradient(90deg, #FF6373 0%, #CC1427 100%)' onClick={() => { }}>
+                            <Typography variant='body' sx={{ color: "white", fontSize: "18px" }}>ПОДРОБНЕЕ</Typography>
+                        </CustomBtn>
+                        <CustomBtn height='64px' bg='white' onClick={() => { }}>
+                            <Typography variant='body' sx={{ color: "#563F42", fontSize: "18px" }}>БУДУ ЗРИТЕЛЕМ</Typography>
+                        </CustomBtn>
+                    </Stack>
+                )}
+                {type === 'master' && (
+                    <Stack direction={"column"} spacing={"16px"} sx={{ px: "11%", justifyContent: 'center', minHeight: '144px' }}>
+                        <CustomBtn height='64px' bg='linear-gradient(90deg, #FF6373 0%, #CC1427 100%)' onClick={() => { }}>
+                            <Typography variant='body' sx={{ color: "white", fontSize: "18px" }}>ЗАПИСАТЬСЯ</Typography>
+                        </CustomBtn>
+                        <CustomBtn height='64px' bg='white' onClick={() => { }}>
+                            <Typography variant='body' sx={{ color: "#563F42", fontSize: "18px" }}>БУДУ ЗРИТЕЛЕМ</Typography>
+                        </CustomBtn>
+                    </Stack>
+                )}
             </Stack>
         </Stack>
     )

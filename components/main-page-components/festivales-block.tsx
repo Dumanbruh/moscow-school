@@ -113,6 +113,7 @@ const FestivalesBlock = ({ isDesktop }: Props) => {
                                     desc={festivale.desc}
                                     img={festivale.img}
                                     date={festivale.date}
+                                    type='main'
                                 />
                             </SwiperSlide>
                         ))}

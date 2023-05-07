@@ -95,6 +95,7 @@ const TournamentsBlock = ({ isDesktop }: Props) => {
                                     desc={tournament.desc}
                                     img={tournament.img}
                                     date={tournament.date}
+                                    type='tournament'
                                 />
                             </SwiperSlide>
                         ))}
