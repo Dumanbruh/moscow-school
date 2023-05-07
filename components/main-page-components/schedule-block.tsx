@@ -22,14 +22,14 @@ const DateBlock = ({ isDesktop, date, scene }: DateBlockProps) => {
                 background: "linear-gradient(89.22deg, #FF6373 -55.16%, #CC1427 105.12%)",
                 boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
                 alignItems: "center",
-                px: "16px"
+                px: isDesktop ? "16px" : "2px"
             }}
-            spacing={"24px"}
+            spacing={isDesktop ? "24px" : "8px"}
         >
-            <Stack width={"25%"} sx={{ justifyContent: "center", alignItems: "center" }}>
+            <Stack width={"40%"} sx={{ justifyContent: "center", alignItems: "center" }}>
                 <Typography variant='fieldHeader' sx={{ color: "white", fontSize: isDesktop ? "24px" : "16px" }}>{date}</Typography>
             </Stack>
-            <Box width={"75%"}>
+            <Box width={"60%"}>
                 <Typography variant='fieldHeader' sx={{ color: "white", fontSize: isDesktop ? "24px" : "16px" }}>{scene}</Typography>
             </Box>
         </Stack>

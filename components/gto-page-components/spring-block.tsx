@@ -34,7 +34,9 @@ const SpringBlock = ({ isDesktop }: Props) => {
                     <Typography variant={isDesktop ? 'body' : 'fieldHeader'} sx={{ fontSize: isDesktop ? "24px" : "20px", lineHeight: "32px", whiteSpace: "pre-wrap", color: "white" }}>
                         {`Приглашаем участников комплекса ГТО всех возрастных ступеней с 12.00 до 18.00 проверить свои возможности в испытаниях на скорость, силу, выносливость и гибкость.`}
                     </Typography>
-                    <CustomBtn height='70px' bg='linear-gradient(90deg, #FFD324 0%, #FF8900 100%)' onClick={() => { }} minWidth='309px'>
+                    <CustomBtn height='70px' bg='linear-gradient(90deg, #FFD324 0%, #FF8900 100%)'
+                        onClick={() => { window.open('https://gbu-mosgorsport-moskomspo.timepad.ru/event/2407597/', '_blank')?.focus() }}
+                        minWidth='309px'>
                         <Typography variant='footerHeader' sx={{ color: "#31313E", fontSize: "18px" }}>ЗАРЕГИСТРИРОВАТЬСЯ</Typography>
                     </CustomBtn>
 

@@ -97,16 +97,16 @@ const FestivalesBlock = ({ isDesktop }: Props) => {
                     src={"images/bg/mobile/blueblock/mossport-logo.png"} />
             }
             <Box component={"img"} sx={{ position: "absolute", left: 0, top: 0, zIndex: 1, maxWidth: isDesktop ? "157px" : "105px", }} src={"images/bg/desktop/blueblock/sun.png"} />
-            <Container maxWidth={isDesktop ? "lg" : "sm"} disableGutters sx={{ zIndex: 2, px: isDesktop ? "0px" : "48px" }}>
+            <Container maxWidth={isDesktop ? "lg" : "sm"} disableGutters sx={{ zIndex: 2 }}>
                 <Stack sx={{ width: "100%", justifyContent: "center", alignItems: "center" }} spacing={"60px"}>
-                    <Typography variant='header' sx={{ fontSize: "64px", lineHeight: "64px", }}>Активности фестиваля</Typography>
+                    <Typography variant='header' sx={{ fontSize: "64px", lineHeight: "64px", textAlign: "center" }}>Активности фестиваля</Typography>
                     <Swiper
-                        slidesPerView={1}
+                        slidesPerView={"auto"}
                         style={{ overflow: "visible", width: "100%" }}
-                        spaceBetween={48}
+                        spaceBetween={isDesktop ? 48 : 12}
                     >
                         {festivales.map((festivale, i) => (
-                            <SwiperSlide key={i} style={{ width: "400px" }}>
+                            <SwiperSlide key={i} style={{ width: isDesktop ? "1100px" : "300px" }}>
                                 <Card
                                     isDesktop={isDesktop}
                                     name={festivale.name}

@@ -141,19 +141,75 @@ const Cover = () => {
                     }}>
                         <Box component={"img"} src={"images/bg/desktop/cover/Logo.svg"} />
                     </Stack>
-                    <Stack sx={{
-                        width: "100%", height: "100%", justifyContent: "center", alignItems: "center", position: "absolute", zIndex: 3,
-                    }} spacing={"78px"}>
-                        <Stack>
-                            <Typography variant='cover' sx={{ fontSize: "187px", maxWidth: "625px" }}>ФЕСТИВАЛЬ</Typography>
-                            <Typography variant='cover' sx={{ fontSize: "107px", maxWidth: "625px" }}>ШКОЛЬНОГО СПОРТА</Typography>
+
+
+                    {router.pathname === '/' && (
+                        <Stack sx={{
+                            width: "100%", height: "100%", justifyContent: "center", alignItems: "center", position: "absolute", zIndex: 3,
+                        }} spacing={"78px"}>
+                            <Stack>
+                                <Typography variant='cover' sx={{ fontSize: "187px", maxWidth: "625px" }}>ФЕСТИВАЛЬ</Typography>
+                                <Typography variant='cover' sx={{ fontSize: "107px", maxWidth: "625px" }}>ШКОЛЬНОГО СПОРТА</Typography>
+                            </Stack>
+                            <Typography variant='cover' sx={{ fontSize: "46px", maxWidth: "625px", textAlign: "center", whiteSpace: "pre-line" }}>
+                                {`ПОСВЯЩЁННЫЙ ПРАЗДНОВАНИЮ 
+                100-ЛЕТИЯ МОСКОВСКОГО СПОРТА`}
+                            </Typography>
                         </Stack>
 
-                        <Typography variant='cover' sx={{ fontSize: "46px", maxWidth: "625px", textAlign: "center", whiteSpace: "pre-line" }}>
-                            {`ПОСВЯЩЁННЫЙ ПРАЗДНОВАНИЮ 
-                    100-ЛЕТИЯ МОСКОВСКОГО СПОРТА`}
-                        </Typography>
-                    </Stack>
+                    )}
+                    {router.pathname === '/leagues' && (
+                        <Stack sx={{
+                            width: "100%", height: "100%", justifyContent: "center", alignItems: "center", position: "absolute", zIndex: 3,
+                        }}>
+                            <Stack>
+                                <Typography variant='cover' sx={{ fontSize: "187px", maxWidth: "625px" }}>ФИНАЛЫ</Typography>
+                                <Typography variant='cover' sx={{ fontSize: "142px", maxWidth: "625px", mt: "-40px" }}>ШКОЛЬНЫХ</Typography>
+                            </Stack>
+                            <Typography variant='cover' sx={{ fontSize: "92px", maxWidth: "625px", textAlign: "center" }}>
+                                СПОРТИВНЫХ ЛИГ
+                            </Typography>
+                        </Stack>
+
+                    )}
+                    {router.pathname === '/gto' && (
+                        <Stack sx={{
+                            width: "100%", height: "100%", justifyContent: "center", alignItems: "center", position: "absolute", zIndex: 3,
+                        }}>
+                            <Stack>
+                                <Typography variant='cover' sx={{ fontSize: "107px", maxWidth: "625px", textAlign: "center" }}>
+                                    ВЫПОЛНЕНИЕ
+                                    НОРМАТИВОВ
+                                </Typography>
+                            </Stack>
+                            <Typography variant='cover' sx={{ fontSize: "187px", mt: "-38px", maxWidth: "625px", textAlign: "center" }}>
+                                ГТО
+                            </Typography>
+                        </Stack>
+
+                    )}
+                    {router.pathname === '/tournaments' && (
+                        <Stack sx={{
+                            width: "100%", height: "100%", justifyContent: "center", alignItems: "center", position: "absolute", zIndex: 3,
+                        }}>
+                            <Typography variant='cover' sx={{ fontSize: "178px", maxWidth: "625px", textAlign: "center" }}>
+                                ОТКРЫТЫЕ
+                            </Typography>
+                            <Typography variant='cover' sx={{ fontSize: "201px", mt: "-30px", maxWidth: "625px", textAlign: "center" }}>
+                                ТУРНИРЫ
+                            </Typography>
+                        </Stack>
+                    )}
+                    {router.pathname === '/master' && (
+                        <Stack sx={{
+                            width: "100%", height: "100%", justifyContent: "center", alignItems: "center", position: "absolute", zIndex: 3,
+                        }}>
+                            <Typography variant='cover' sx={{ fontSize: "187px", maxWidth: "625px", textAlign: "center" }}>
+                                МАСТЕР-
+                                КЛАССЫ
+                            </Typography>
+                        </Stack>
+                    )}
                     <Stack
                         width={"50%"}
                         sx={{
@@ -337,22 +393,76 @@ const Cover = () => {
                         <Box component={"img"} sx={{ position: "absolute", height: "50%", right: isMobile ? 0 : "-45%", bottom: 0, zIndex: 12 }} src={"images/bg/mobile/cover/RightBoy.png"} />
                         <Box component={"img"} sx={{ position: "absolute", right: 0, top: 0, zIndex: 2 }} src={"images/bg/mobile/cover/TopRightClouds.png"} />
                     </Stack>
-                    <Stack sx={{
-                        width: "100%", pt: "25%",
-                        justifyContent: "center", alignItems: "center", position: "absolute", zIndex: 3
-                    }} spacing={"78px"}>
-                        <Stack>
-                            <Typography variant='cover' sx={{ fontSize: "96px", maxWidth: "344px" }}>ФЕСТИВАЛЬ</Typography>
-                            <Typography variant='cover' sx={{ fontSize: "55px", maxWidth: "344px" }}>ШКОЛЬНОГО СПОРТА</Typography>
+                    {router.pathname === '/' && (
+                        <Stack sx={{
+                            width: "100%", pt: "25%",
+                            justifyContent: "center", alignItems: "center", position: "absolute", zIndex: 3
+                        }} spacing={"78px"}>
+                            <Stack>
+                                <Typography variant='cover' sx={{ fontSize: "96px", maxWidth: "344px" }}>ФЕСТИВАЛЬ</Typography>
+                                <Typography variant='cover' sx={{ fontSize: "55px", maxWidth: "344px" }}>ШКОЛЬНОГО СПОРТА</Typography>
+                            </Stack>
+
+                            <Typography variant='cover' sx={{ fontSize: "36px", maxWidth: "344px", textAlign: "center", whiteSpace: "pre-line", }}>
+                                {`ПОСВЯЩЁННЫЙ 
+                                  ПРАЗДНОВАНИЮ 
+                                  100-ЛЕТИЯ МОСКОВСКОГО 
+                                  СПОРТА`}
+                            </Typography>
+                        </Stack>
+                    )}
+                    {router.pathname === '/leagues' && (
+                        <Stack sx={{
+                            width: "100%", pt: "25%", justifyContent: "center", alignItems: "center", position: "absolute", zIndex: 3,
+                        }}>
+                            <Stack>
+                                <Typography variant='cover' sx={{ fontSize: "96px", maxWidth: "344px" }}>ФИНАЛЫ</Typography>
+                                <Typography variant='cover' sx={{ fontSize: "73px", maxWidth: "344px", mt: "-20px" }}>ШКОЛЬНЫХ</Typography>
+                            </Stack>
+                            <Typography variant='cover' sx={{ fontSize: "46px", maxWidth: "344px", textAlign: "center" }}>
+                                СПОРТИВНЫХ ЛИГ
+                            </Typography>
                         </Stack>
 
-                        <Typography variant='cover' sx={{ fontSize: "36px", maxWidth: "344px", textAlign: "center", whiteSpace: "pre-line", }}>
-                            {`ПОСВЯЩЁННЫЙ 
-                            ПРАЗДНОВАНИЮ 
-                        100-ЛЕТИЯ МОСКОВСКОГО 
-                        СПОРТА`}
-                        </Typography>
-                    </Stack>
+                    )}
+                    {router.pathname === '/gto' && (
+                        <Stack sx={{
+                            width: "100%", pt: "25%", justifyContent: "center", alignItems: "center", position: "absolute", zIndex: 3,
+                        }}>
+                            <Stack>
+                                <Typography variant='cover' sx={{ fontSize: "72px", maxWidth: "344px", textAlign: "center" }}>
+                                    ВЫПОЛНЕНИЕ
+                                    НОРМАТИВОВ
+                                </Typography>
+                            </Stack>
+                            <Typography variant='cover' sx={{ fontSize: "119px", mt: "-38px", maxWidth: "344px", textAlign: "center" }}>
+                                ГТО
+                            </Typography>
+                        </Stack>
+
+                    )}
+                    {router.pathname === '/tournaments' && (
+                        <Stack sx={{
+                            width: "100%", pt: "25%", justifyContent: "center", alignItems: "center", position: "absolute", zIndex: 3,
+                        }}>
+                            <Typography variant='cover' sx={{ fontSize: "85px", maxWidth: "344px", textAlign: "center" }}>
+                                ОТКРЫТЫЕ
+                            </Typography>
+                            <Typography variant='cover' sx={{ fontSize: "96px", mt: "-30px", maxWidth: "344px", textAlign: "center" }}>
+                                ТУРНИРЫ
+                            </Typography>
+                        </Stack>
+                    )}
+                    {router.pathname === '/master' && (
+                        <Stack sx={{
+                            width: "100%", pt: "25%", justifyContent: "center", alignItems: "center", position: "absolute", zIndex: 3,
+                        }}>
+                            <Typography variant='cover' sx={{ fontSize: "96px", maxWidth: "344px", textAlign: "center" }}>
+                                МАСТЕР-
+                                КЛАССЫ
+                            </Typography>
+                        </Stack>
+                    )}
                 </Stack>
             </Box>
         </Stack >

@@ -6,17 +6,21 @@ import InformationBlock from "@/components/main-page-components/information-bloc
 import MapBlock from "@/components/main-page-components/map-block";
 import FestivalesBlock from "@/components/main-page-components/festivales-block";
 import ScheduleBlock from "@/components/main-page-components/schedule-block";
-import PreviewCover from "@/components/ui/preview-cover";
-import PreviewRegister from "@/components/ui/preview-register";
 
 
-export default function Home() {
-  const { isDesktop } = useGlobalMediaQuery();
+const preview = () => {
+    const { isDesktop } = useGlobalMediaQuery();
 
-  return (
-    <Stack width={"100%"}>
-      <PreviewCover />
-      <PreviewRegister />
-    </Stack>
-  )
+    return (
+        <Stack width={"100%"}>
+            <Cover />
+            <RegisterBlock />
+            <InformationBlock isDesktop={isDesktop} />
+            <MapBlock isDesktop={isDesktop} />
+            <FestivalesBlock isDesktop={isDesktop} />
+            <ScheduleBlock isDesktop={isDesktop} />
+        </Stack>
+    )
 }
+
+export default preview

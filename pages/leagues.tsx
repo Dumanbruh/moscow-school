@@ -2,6 +2,8 @@ import BasketballBlock from '@/components/leagues-page-components/basketball-blo
 import FootballBlock from '@/components/leagues-page-components/football-block'
 import InformationBlock from '@/components/leagues-page-components/information-block'
 import PresidentBlock from '@/components/leagues-page-components/president-block'
+import RegisterBlock from '@/components/main-page-components/register'
+import Cover from '@/components/ui/cover'
 import useGlobalMediaQuery from '@/hooks/useGlobalMediaQuery'
 import { Stack } from '@mui/material'
 import { NextPage } from 'next'
@@ -11,6 +13,8 @@ const LeaguesPage: NextPage = () => {
     const { isDesktop } = useGlobalMediaQuery();
     return (
         <Stack sx={{ width: "100%" }}>
+            <Cover />
+            <RegisterBlock />
             <InformationBlock isDesktop={isDesktop} />
             <BasketballBlock isDesktop={isDesktop} />
             <PresidentBlock isDesktop={isDesktop} />

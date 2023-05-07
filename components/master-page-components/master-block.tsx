@@ -111,18 +111,18 @@ const MasterBlock = ({ isDesktop }: Props) => {
                     src={"images/bg/mobile/information/mossport-logo.png"} />
             }
             <Box component={"img"} sx={{ position: "absolute", right: 0, maxWidth: isDesktop ? "157px" : "110px", top: 0, zIndex: 1 }} src={"images/bg/desktop/information/sun.png"} />
-            <Container maxWidth={isDesktop ? "lg" : "sm"} disableGutters sx={{ zIndex: 2, px: isDesktop ? "0px" : "48px" }}>
+            <Container maxWidth={isDesktop ? "lg" : "sm"} disableGutters sx={{ zIndex: 2 }}>
                 <Stack sx={{ width: "100%", justifyContent: "center", alignItems: "center" }} spacing={"64px"}>
                     <Typography variant='header' sx={{ fontSize: "64px", lineHeight: "64px", textShadow: "0px 0px 40px rgba(0, 0, 0, 0.5)", whiteSpace: "pre-line", textAlign: "center" }}>
                         {`мастер-классы`}
                     </Typography>
                     <Swiper
-                        slidesPerView={1}
+                        slidesPerView={"auto"}
                         style={{ overflow: "visible", width: "100%" }}
-                        spaceBetween={48}
+                        spaceBetween={isDesktop ? 48 : 12}
                     >
                         {masters.map((master, i) => (
-                            <SwiperSlide key={i} style={{ width: "400px" }}>
+                            <SwiperSlide key={i} style={{ width: isDesktop ? "1100px" : "300px" }}>
                                 <Card
                                     type='master'
                                     isDesktop={isDesktop}

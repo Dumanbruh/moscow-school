@@ -51,8 +51,8 @@ export default function App({ Component, pageProps }: AppProps) {
       }}
     />
     <ThemeProvider theme={theme}>
-      <Cover />
-      <RegisterBlock />
+      {/* <Cover />
+      <RegisterBlock /> */}
       <Component {...pageProps} />
       <Footer />
     </ThemeProvider>

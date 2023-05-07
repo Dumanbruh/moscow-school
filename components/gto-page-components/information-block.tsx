@@ -43,7 +43,9 @@ const InformationBlock = ({ isDesktop }: Props) => {
 
 К участию приглашаются обучающиеся образовательных организаций юноши и девушки 12-13 лет (IV ступень) и 14-15 лет (V ступень), имеющие золотой знак отличия комплекса ГТО в соответствующих ступенях в личном кабинете участника АИС ГТО.`}
                     </Typography>
-                    <CustomBtn height='70px' bg='linear-gradient(90deg, #FFD324 0%, #FF8900 100%)' onClick={() => { }} minWidth='309px'>
+                    <CustomBtn height='70px' bg='linear-gradient(90deg, #FFD324 0%, #FF8900 100%)'
+                        onClick={() => { window.open('https://gto.patriotsport.moscow/gorodskie-meropriyatiya-gto/festival-vfsk-gto-po-otboru-uchastnikov-na-vserossijskie-etapy-sredi-obuchayushhihsya-obrazovatelnyh-organizatsij/', '_blank')?.focus() }}
+                        minWidth='309px'>
                         <Typography variant='footerHeader' sx={{ color: "#31313E", fontSize: "18px" }}>ЗАРЕГИСТРИРОВАТЬСЯ</Typography>
                     </CustomBtn>
 
