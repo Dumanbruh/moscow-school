@@ -116,8 +116,8 @@ const Cover = () => {
                         justifyContent: "center",
                         alignItems: "center",
                     }}>
-                    {links.map((link) => (
-                        <Box onClick={() => router.push(link.link)} sx={{ borderBottom: router.pathname === link.link ? "2px solid #01B4B1" : "none" }}>
+                    {links.map((link, i) => (
+                        <Box onClick={() => router.push(link.link)} key={i} sx={{ borderBottom: router.pathname === link.link ? "2px solid #01B4B1" : "none" }}>
                             <Typography variant='header' sx={{ fontSize: "24px", lineHeight: "24px", cursor: "pointer" }} >{link.text}</Typography>
                         </Box>
                     ))}
@@ -277,8 +277,8 @@ const Cover = () => {
                         onClose={() => setOpen(false)}>
                         <Box sx={{ width: "100%", pt: "60px", pl: "30px" }} role="presentation">
                             <Stack spacing={"48px"}>
-                                {links.map((link) => (
-                                    <Box onClick={() => router.push(link.link)}>
+                                {links.map((link, i) => (
+                                    <Box onClick={() => router.push(link.link)} key={i}>
                                         <Typography variant='header' sx={{ fontSize: "24px", lineHeight: "24px", cursor: "pointer", borderBottom: router.pathname === link.link ? "2px solid #01B4B1" : "none" }} >{link.text}</Typography>
                                     </Box>
                                 ))}

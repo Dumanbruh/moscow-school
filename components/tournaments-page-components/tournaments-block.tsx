@@ -8,6 +8,56 @@ interface Props {
 }
 
 const TournamentsBlock = ({ isDesktop }: Props) => {
+
+    const tournaments = [
+        {
+            name: "Тэг-регби",
+            desc: `Фестиваль пройдет в двух возрастных 
+            категориях смешанных команд юношей 
+            и девушек: 7-9, 10-12 лет.
+            Все игры проходят в группах, все команды 
+            играют по правилам «Тэг-регби» согласно 
+            расписанию.`,
+            date: "19 МАЯ",
+            img: "url(/images/tournaments-page/1.png)"
+        },
+        {
+            name: "Настольный теннис",
+            desc: `Турнир по настольному теннису среди 
+            команд школьных спортивных 
+            клубов Москвы
+            в 2-х возрастных категориях.
+            Возрастные категории: 9-12 лет, 13-15 лет.
+            Состав команды: 2 юноши + 1 девушка.`,
+            date: "19 МАЯ",
+            img: "url(/images/tournaments-page/2.png)"
+        },
+        {
+            name: "Фитнес-аэробика",
+            desc: `Фестиваль по фитнес-аэробике 
+            в дисциплинах: «Аэробика», «Аэробика 
+            5 человек», «Степ-аэробика», «Хип-хоп», 
+            «Хип-хоп, большая группа».
+            Возрастные категории: «Аэробика» 
+            8-10 лет, 11-13 лет, 14-16 лет; «Хип-хоп» 
+            8-13 лет, 12-17 лет.`,
+            date: "19 МАЯ",
+            img: "url(/images/tournaments-page/3.png)"
+        },
+        {
+            name: "Футбол",
+            desc: `Соревнования по футболу 4×4 среди 
+            команд участников проекта «Футбол 
+            в школе». Групповой этап, плей-офф.
+            Возрастные категории: мальчики и девочки 7-9 лет.
+            Состав команды — 4 игрока (смешанные 
+            команды мальчиков и девочек).`,
+            date: "19 МАЯ",
+            img: "url(/images/tournaments-page/4.png)"
+        },
+    ]
+
+
     return (
         <Stack sx={{
             width: "100%",
@@ -37,13 +87,20 @@ const TournamentsBlock = ({ isDesktop }: Props) => {
                         style={{ overflow: "visible", width: "100%" }}
                         spaceBetween={48}
                     >
-                        <SwiperSlide style={{ width: "400px" }}><Card isDesktop={isDesktop} /></SwiperSlide>
-                        <SwiperSlide style={{ width: "400px" }}><Card isDesktop={isDesktop} /></SwiperSlide>
-                        <SwiperSlide style={{ width: "400px" }}><Card isDesktop={isDesktop} /></SwiperSlide>
+                        {tournaments.map((tournament, i) => (
+                            <SwiperSlide key={i} style={{ width: "400px" }}>
+                                <Card
+                                    isDesktop={isDesktop}
+                                    name={tournament.name}
+                                    desc={tournament.desc}
+                                    img={tournament.img}
+                                    date={tournament.date}
+                                />
+                            </SwiperSlide>
+                        ))}
                     </Swiper>
                 </Stack>
             </Container>
-
         </Stack>
     )
 }

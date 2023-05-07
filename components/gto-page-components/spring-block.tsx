@@ -39,9 +39,9 @@ const SpringBlock = ({ isDesktop }: Props) => {
                     </CustomBtn>
 
                     {isDesktop ? <Stack direction={"row"} spacing={"30px"}>
-                        <Box component={"img"} sx={{ maxWidth: "267px" }} src={"images/leagues-page/blue/1.png"} />
-                        <Box component={"img"} sx={{ maxWidth: "267px" }} src={"images/leagues-page/blue/2.png"} />
-                        <Box component={"img"} sx={{ maxWidth: "267px" }} src={"images/leagues-page/blue/3.png"} />
+                        <Box component={"img"} sx={{ maxWidth: "267px" }} src={"images/gto-page/blue/1.png"} />
+                        <Box component={"img"} sx={{ maxWidth: "267px" }} src={"images/gto-page/blue/2.png"} />
+                        <Box component={"img"} sx={{ maxWidth: "267px" }} src={"images/gto-page/blue/3.png"} />
                     </Stack> : <></>}
                 </Stack>
             </Container>
@@ -49,13 +49,13 @@ const SpringBlock = ({ isDesktop }: Props) => {
                 style={{ overflow: "visible", width: "100%", paddingLeft: "36px", marginTop: "110px" }}
                 spaceBetween={30}>
                 <SwiperSlide style={{ width: "267px", height: "178px" }}>
-                    <Box component={"img"} sx={{ width: "100%", height: "100%" }} src={"images/leagues-page/blue/1.png"} />
+                    <Box component={"img"} sx={{ width: "100%", height: "100%" }} src={"images/gto-page/blue/1.png"} />
                 </SwiperSlide>
                 <SwiperSlide style={{ width: "267px", height: "178px" }}>
-                    <Box component={"img"} sx={{ width: "100%", height: "100%" }} src={"images/leagues-page/blue/2.png"} />
+                    <Box component={"img"} sx={{ width: "100%", height: "100%" }} src={"images/gto-page/blue/2.png"} />
                 </SwiperSlide>
                 <SwiperSlide style={{ width: "267px", height: "178px" }}>
-                    <Box component={"img"} sx={{ width: "100%", height: "100%" }} src={"images/leagues-page/blue/3.png"} />
+                    <Box component={"img"} sx={{ width: "100%", height: "100%" }} src={"images/gto-page/blue/3.png"} />
                 </SwiperSlide>
             </Swiper>}
         </Stack>
