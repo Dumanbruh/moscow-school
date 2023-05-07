@@ -6,9 +6,10 @@ import InformationBlock from "@/components/main-page-components/information-bloc
 import MapBlock from "@/components/main-page-components/map-block";
 import FestivalesBlock from "@/components/main-page-components/festivales-block";
 import ScheduleBlock from "@/components/main-page-components/schedule-block";
+import { NextPage } from "next";
 
 
-const preview = () => {
+const PreviewPage: NextPage = () => {
     const { isDesktop } = useGlobalMediaQuery();
 
     return (
@@ -23,4 +24,4 @@ const preview = () => {
     )
 }
 
-export default preview
+export default PreviewPage;
