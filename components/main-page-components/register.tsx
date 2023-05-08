@@ -207,7 +207,9 @@ const RegisterBlock = () => {
               <CustomBtn
                 height="70px"
                 bg="linear-gradient(266.01deg, #DE3042 -38.53%, #FD5F6F 111.85%)"
-                onClick={() => {}}
+                onClick={() => {
+                  open();
+                }}
                 minWidth="309px"
               >
                 <Typography

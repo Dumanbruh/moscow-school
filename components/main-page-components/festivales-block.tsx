@@ -2,6 +2,7 @@ import { Box, Container, Stack, Typography } from '@mui/material'
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Card from '../ui/card'
+import { Navigation } from 'swiper';
 
 interface Props {
     isDesktop: boolean;
@@ -18,7 +19,8 @@ const FestivalesBlock = ({ isDesktop }: Props) => {
             а также финалы Президентских 
             спортивных игр`,
             date: "19 МАЯ",
-            img: "url(/images/main-page/1.png)"
+            img: "url(/images/main-page/1.png)",
+            url: "/leagues"
         },
         {
             name: "'КОЖАНЫЙ МЯЧ' ФИНАЛЫ",
@@ -27,7 +29,8 @@ const FestivalesBlock = ({ isDesktop }: Props) => {
             участие 57 команд, и решающие матчи 
             состоятся в рамках фестиваля.`,
             date: "19 МАЯ",
-            img: "url(/images/main-page/2.png)"
+            img: "url(/images/main-page/2.png)",
+            url: "/"
         },
         {
             name: "фестиваль ГТО",
@@ -37,7 +40,8 @@ const FestivalesBlock = ({ isDesktop }: Props) => {
             Всероссийских фестивалей ГТО для 
             школьников и студентов ВУЗов.`,
             date: "19 МАЯ",
-            img: "url(/images/main-page/3.png)"
+            img: "url(/images/main-page/3.png)",
+            url: "/gto"
         },
         {
             name: "рогейн и лабиринт",
@@ -48,7 +52,8 @@ const FestivalesBlock = ({ isDesktop }: Props) => {
             максимальное количество контрольных 
             пунктов.`,
             date: "19 МАЯ",
-            img: "url(/images/main-page/4.png)"
+            img: "url(/images/main-page/4.png)",
+            url: "/"
         },
         {
             name: "открытые турниры",
@@ -59,7 +64,8 @@ const FestivalesBlock = ({ isDesktop }: Props) => {
             Переходи на страницу, выбирай любимый 
             вид спорта и участвуй!`,
             date: "19 МАЯ",
-            img: "url(/images/main-page/5.png)"
+            img: "url(/images/main-page/5.png)",
+            url: "/tournaments"
         },
         {
             name: "мастер-классы",
@@ -72,7 +78,8 @@ const FestivalesBlock = ({ isDesktop }: Props) => {
             Записывайся и приходи — разберёмся 
             вместе!`,
             date: "19 МАЯ",
-            img: "url(/images/main-page/6.png)"
+            img: "url(/images/main-page/6.png)",
+            url: "/master"
         },
     ]
 
@@ -102,6 +109,8 @@ const FestivalesBlock = ({ isDesktop }: Props) => {
                     <Typography variant='header' sx={{ fontSize: "64px", lineHeight: "64px", textAlign: "center" }}>Активности фестиваля</Typography>
                     <Swiper
                         slidesPerView={"auto"}
+                        modules={[Navigation]}
+                        navigation={isDesktop ? true : false}
                         style={{ overflow: "visible", width: "100%" }}
                         spaceBetween={isDesktop ? 48 : 16}
                     >
@@ -114,6 +123,7 @@ const FestivalesBlock = ({ isDesktop }: Props) => {
                                     img={festivale.img}
                                     date={festivale.date}
                                     type='main'
+                                    url={festivale.url}
                                 />
                             </SwiperSlide>
                         ))}

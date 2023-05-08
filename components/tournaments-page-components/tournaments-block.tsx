@@ -2,6 +2,7 @@ import React from 'react'
 import { Box, Container, Stack, Typography } from '@mui/material'
 import Card from '../ui/card'
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper';
 
 interface Props {
     isDesktop: boolean;
@@ -19,7 +20,8 @@ const TournamentsBlock = ({ isDesktop }: Props) => {
             играют по правилам «Тэг-регби» согласно 
             расписанию.`,
             date: "19 МАЯ",
-            img: "url(/images/tournaments-page/1.png)"
+            img: "url(/images/tournaments-page/1.png)",
+            url: "https://patriotsport.moscow/festival-shkolnogo-sporta/"
         },
         {
             name: "Настольный теннис",
@@ -30,7 +32,8 @@ const TournamentsBlock = ({ isDesktop }: Props) => {
             Возрастные категории: 9-12 лет, 13-15 лет.
             Состав команды: 2 юноши + 1 девушка.`,
             date: "19 МАЯ",
-            img: "url(/images/tournaments-page/2.png)"
+            img: "url(/images/tournaments-page/2.png)",
+            url: "https://patriotsport.moscow/festival-shkolnogo-sporta/"
         },
         {
             name: "Фитнес-аэробика",
@@ -42,7 +45,8 @@ const TournamentsBlock = ({ isDesktop }: Props) => {
             8-10 лет, 11-13 лет, 14-16 лет; «Хип-хоп» 
             8-13 лет, 12-17 лет.`,
             date: "19 МАЯ",
-            img: "url(/images/tournaments-page/3.png)"
+            img: "url(/images/tournaments-page/3.png)",
+            url: "https://patriotsport.moscow/festival-shkolnogo-sporta/"
         },
         {
             name: "Футбол",
@@ -53,7 +57,8 @@ const TournamentsBlock = ({ isDesktop }: Props) => {
             Состав команды — 4 игрока (смешанные 
             команды мальчиков и девочек).`,
             date: "19 МАЯ",
-            img: "url(/images/tournaments-page/4.png)"
+            img: "url(/images/tournaments-page/4.png)",
+            url: "https://patriotsport.moscow/sport/futbol-v-shkole/"
         },
     ]
 
@@ -85,11 +90,14 @@ const TournamentsBlock = ({ isDesktop }: Props) => {
                     <Swiper
                         slidesPerView={"auto"}
                         style={{ overflow: "visible", width: "100%" }}
+                        modules={[Navigation]}
+                        navigation={isDesktop ? true : false}
                         spaceBetween={isDesktop ? 48 : 16}
                     >
                         {tournaments.map((tournament, i) => (
                             <SwiperSlide key={i} style={{ width: isDesktop ? "1100px" : "320px" }}>
                                 <Card
+                                    url={tournament.url}
                                     isDesktop={isDesktop}
                                     name={tournament.name}
                                     desc={tournament.desc}

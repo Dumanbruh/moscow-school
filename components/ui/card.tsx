@@ -8,10 +8,11 @@ interface Props {
     desc: string;
     img: string;
     date: string;
+    url: string;
     type: 'main' | 'tournament' | 'master'
 }
 
-const Card = ({ isDesktop, name, desc, img, date, type }: Props) => {
+const Card = ({ isDesktop, name, desc, img, url, date, type }: Props) => {
     return isDesktop ? (
         <Stack sx={{ minWidth: "1100px", background: "linear-gradient(90deg, #FFD324 0%, #FF8900 100%)", borderRadius: "32px", position: "relative" }} direction={"row"} spacing={"45px"}>
             <Box sx={{
@@ -45,7 +46,7 @@ const Card = ({ isDesktop, name, desc, img, date, type }: Props) => {
                 </Typography>
                 {type === 'main' && (
                     <Stack direction={"row"} spacing={"30px"} sx={{ justifyContent: name !== "мастер-классы" ? 'flex-start' : 'center' }}>
-                        <CustomBtn height='96px' bg='linear-gradient(90deg, #FF6373 0%, #CC1427 100%)' onClick={() => { }} minWidth='255px'>
+                        <CustomBtn height='96px' bg='linear-gradient(90deg, #FF6373 0%, #CC1427 100%)' onClick={() => { window.open(url, '_blank')?.focus() }} minWidth='255px'>
                             <Typography variant='body' sx={{ color: "white", fontSize: "18px" }}>ПОДРОБНЕЕ</Typography>
                         </CustomBtn>
                         {name !== "мастер-классы" && (
@@ -57,7 +58,7 @@ const Card = ({ isDesktop, name, desc, img, date, type }: Props) => {
                 )}
                 {type === 'tournament' && (
                     <Stack direction={"row"} spacing={"30px"} sx={{ justifyContent: name !== "мастер-классы" ? 'flex-start' : 'center' }}>
-                        <CustomBtn height='96px' bg='linear-gradient(90deg, #FF6373 0%, #CC1427 100%)' onClick={() => { }} minWidth='255px'>
+                        <CustomBtn height='96px' bg='linear-gradient(90deg, #FF6373 0%, #CC1427 100%)' onClick={() => { window.open(url, '_blank')?.focus() }} minWidth='255px'>
                             <Typography variant='body' sx={{ color: "white", fontSize: "18px" }}>ПОДРОБНЕЕ</Typography>
                         </CustomBtn>
                         <CustomBtn height='96px' bg='white' onClick={() => { }} minWidth='255px'>
@@ -67,7 +68,7 @@ const Card = ({ isDesktop, name, desc, img, date, type }: Props) => {
                 )}
                 {type === 'master' && (
                     <Stack direction={"row"} spacing={"30px"} sx={{ justifyContent: name !== "мастер-классы" ? 'flex-start' : 'center' }}>
-                        <CustomBtn height='96px' bg='linear-gradient(90deg, #FF6373 0%, #CC1427 100%)' onClick={() => { }} minWidth='255px'>
+                        <CustomBtn height='96px' bg='linear-gradient(90deg, #FF6373 0%, #CC1427 100%)' onClick={() => { window.open(url, '_blank')?.focus() }} minWidth='255px'>
                             <Typography variant='body' sx={{ color: "white", fontSize: "18px" }}>ЗАПИСАТЬСЯ</Typography>
                         </CustomBtn>
                         <CustomBtn height='96px' bg='white' onClick={() => { }} minWidth='255px'>
@@ -107,14 +108,14 @@ const Card = ({ isDesktop, name, desc, img, date, type }: Props) => {
             </Box>
             <Box component={"img"} src={"images/logos/card/card-logo.png"} sx={{ position: "absolute", right: 0, top: 0, pt: "162px", zIndex: 1 }} />
 
-            <Stack spacing={"24px"} sx={{ zIndex: 2, px: "20px" }}>
+            <Stack sx={{ zIndex: 2, px: "20px" }}>
                 <Typography variant='header' sx={{ fontSize: "36px", lineHeight: "36px", minHeight: name === "Настольные спортивные игры" ? "100%" : "72px", letterSpacing: "-1px", textAlign: "center" }}>{name}</Typography>
-                <Typography variant='body' sx={{ fontSize: "16px", lineHeight: "19px", minHeight: "305px", whiteSpace: "pre-line" }}>
+                <Typography variant='body' sx={{ fontSize: "14px", mt: "24px", lineHeight: "19px", minHeight: type === 'main' ? "235px" : "206px", whiteSpace: "pre-line" }}>
                     {`${desc}`}
                 </Typography>
 
                 {type === 'main' && (
-                    <Stack direction={"column"} spacing={"16px"} sx={{ px: "11%", justifyContent: 'center', minHeight: '144px' }}>
+                    <Stack direction={"column"} spacing={"16px"} sx={{ px: "11%", mt: "13px", justifyContent: 'center', minHeight: '144px' }}>
                         <CustomBtn height='64px' bg='linear-gradient(90deg, #FF6373 0%, #CC1427 100%)' onClick={() => { }}>
                             <Typography variant='body' sx={{ color: "white", fontSize: "18px" }}>ПОДРОБНЕЕ</Typography>
                         </CustomBtn>
@@ -123,11 +124,10 @@ const Card = ({ isDesktop, name, desc, img, date, type }: Props) => {
                                 <Typography variant='body' sx={{ color: "#563F42", fontSize: "18px" }}>БУДУ ЗРИТЕЛЕМ</Typography>
                             </CustomBtn>
                         )}
-
                     </Stack>
                 )}
                 {type === 'tournament' && (
-                    <Stack direction={"column"} spacing={"16px"} sx={{ px: "11%", justifyContent: 'center', minHeight: '144px' }}>
+                    <Stack direction={"column"} spacing={"16px"} sx={{ px: "11%", mt: "13px", justifyContent: 'center', minHeight: '144px' }}>
                         <CustomBtn height='64px' bg='linear-gradient(90deg, #FF6373 0%, #CC1427 100%)' onClick={() => { }}>
                             <Typography variant='body' sx={{ color: "white", fontSize: "18px" }}>ПОДРОБНЕЕ</Typography>
                         </CustomBtn>
@@ -137,7 +137,7 @@ const Card = ({ isDesktop, name, desc, img, date, type }: Props) => {
                     </Stack>
                 )}
                 {type === 'master' && (
-                    <Stack direction={"column"} spacing={"16px"} sx={{ px: "11%", justifyContent: 'center', minHeight: '144px' }}>
+                    <Stack direction={"column"} spacing={"16px"} sx={{ px: "11%", mt: "13px", justifyContent: 'center', minHeight: '144px' }}>
                         <CustomBtn height='64px' bg='linear-gradient(90deg, #FF6373 0%, #CC1427 100%)' onClick={() => { }}>
                             <Typography variant='body' sx={{ color: "white", fontSize: "18px" }}>ЗАПИСАТЬСЯ</Typography>
                         </CustomBtn>

@@ -2,6 +2,7 @@ import { Box, Container, Stack, Typography } from '@mui/material'
 import React, { FC } from 'react'
 import Card from '../ui/card'
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper';
 
 interface Props {
     isDesktop: boolean;
@@ -19,7 +20,8 @@ const MasterBlock = ({ isDesktop }: Props) => {
             процесс обучения и игры особенно 
             увлекательным.`,
             date: "19 МАЯ",
-            img: "url(/images/master-page/1.png)"
+            img: "url(/images/master-page/1.png)",
+            url: "https://patriotsport.moscow/festival-shkolnogo-sporta/"
         },
         {
             name: "Роуп – скиппинг",
@@ -30,7 +32,8 @@ const MasterBlock = ({ isDesktop }: Props) => {
             Мастер-классы для всех желающих без 
             ограничений по возрасту.`,
             date: "19 МАЯ",
-            img: "url(/images/master-page/2.png)"
+            img: "url(/images/master-page/2.png)",
+            url: "https://patriotsport.moscow/festival-shkolnogo-sporta/"
         },
         {
             name: "Джампинг фитнес",
@@ -41,7 +44,8 @@ const MasterBlock = ({ isDesktop }: Props) => {
             функционал» и «джампинг рехаб» для 
             детей с ОВЗ.`,
             date: "19 МАЯ",
-            img: "url(/images/master-page/3.png)"
+            img: "url(/images/master-page/3.png)",
+            url: "https://patriotsport.moscow/festival-shkolnogo-sporta/"
         },
         {
             name: "Прыгай выше головы",
@@ -52,21 +56,18 @@ const MasterBlock = ({ isDesktop }: Props) => {
             и посостязаться в импровизированных 
             личных и командных батлах.`,
             date: "19 МАЯ",
-            img: "url(/images/master-page/4.png)"
+            img: "url(/images/master-page/4.png)",
+            url: "https://patriotsport.moscow/festival-shkolnogo-sporta/"
         },
         {
             name: "Русская лапта",
             desc: `Вас ждёт:
-               • Знакомство с инвентарём и правилами 
-            лапты.
-               • Отработка подброса мяча подающим 
-            игроком. Отработка трёх видов ударов, 
-            используемых в лапте. Разделение 
-            участников на две команды. Игра 20 мин.
-               • После игры инструктор будет готов 
-            ответить на интересующие вопросы.`,
+               • Знакомство с инвентарём и правилами лапты.
+               • Отработка подброса мяча подающим игроком. Отработка трёх видов ударов, используемых в лапте. Разделение участников на две команды. Игра 20 мин.
+               • После игры инструктор будет готов ответить на интересующие вопросы.`,
             date: "19 МАЯ",
-            img: "url(/images/master-page/5.png)"
+            img: "url(/images/master-page/5.png)",
+            url: "https://patriotsport.moscow/festival-shkolnogo-sporta/"
         },
         {
             name: "Городки",
@@ -76,7 +77,8 @@ const MasterBlock = ({ isDesktop }: Props) => {
             игры городки. Любой желающий сможет 
             попробовать свои силы в игре.`,
             date: "19 МАЯ",
-            img: "url(/images/master-page/6.png)"
+            img: "url(/images/master-page/6.png)",
+            url: "https://patriotsport.moscow/festival-shkolnogo-sporta/"
         },
         {
             name: "Настольные спортивные игры",
@@ -84,7 +86,8 @@ const MasterBlock = ({ isDesktop }: Props) => {
             такими играми, как Джакколо, Керлинг, 
             Корнхол и другие.`,
             date: "19 МАЯ",
-            img: "url(/images/master-page/7.png)"
+            img: "url(/images/master-page/7.png)",
+            url: "https://patriotsport.moscow/festival-shkolnogo-sporta/"
         },
     ]
 
@@ -119,6 +122,8 @@ const MasterBlock = ({ isDesktop }: Props) => {
                     <Swiper
                         slidesPerView={"auto"}
                         style={{ overflow: "visible", width: "100%" }}
+                        modules={[Navigation]}
+                        navigation={isDesktop ? true : false}
                         spaceBetween={isDesktop ? 48 : 16}
                     >
                         {masters.map((master, i) => (
@@ -130,6 +135,7 @@ const MasterBlock = ({ isDesktop }: Props) => {
                                     img={master.img}
                                     desc={master.desc}
                                     date={master.date}
+                                    url={master.url}
                                 />
                             </SwiperSlide>
                         ))}
