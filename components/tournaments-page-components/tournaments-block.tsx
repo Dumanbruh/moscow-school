@@ -85,10 +85,10 @@ const TournamentsBlock = ({ isDesktop }: Props) => {
                     <Swiper
                         slidesPerView={"auto"}
                         style={{ overflow: "visible", width: "100%" }}
-                        spaceBetween={isDesktop ? 48 : 12}
+                        spaceBetween={isDesktop ? 48 : 16}
                     >
                         {tournaments.map((tournament, i) => (
-                            <SwiperSlide key={i} style={{ width: isDesktop ? "1100px" : "300px" }}>
+                            <SwiperSlide key={i} style={{ width: isDesktop ? "1100px" : "320px" }}>
                                 <Card
                                     isDesktop={isDesktop}
                                     name={tournament.name}
