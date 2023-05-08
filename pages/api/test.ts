@@ -1,11 +1,13 @@
-import { formsCol } from "@/database/mongo";
 import { BackendFunction } from "@/models/backend-function";
 import { Form } from "@/models/form";
+import { sendTestEmail } from "@/utils/transporter";
 import { NextApiRequest, NextApiResponse } from "next";
 
-const addRecord = async (form: Form): Promise<BackendFunction<string>> => {
+const testFunction = async (body: Form): Promise<BackendFunction<string>> => {
   try {
-    await formsCol.insertOne(form);
+    const { email } = body;
+
+    sendTestEmail(email);
 
     const result = "Вы успешно записались";
 
@@ -22,7 +24,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   switch (method) {
     case "POST":
       {
-        const [result, err] = await addRecord(body);
+        const [result, err] = await testFunction(body);
 
         if (err !== null) {
           res.status(500).send(err.message);
@@ -32,7 +34,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       break;
 
     default:
-      res.setHeader("Allow", ["GET", "POST"]);
+      res.setHeader("Allow", ["POST"]);
       res.status(405).end(`Method ${method} Not Allowed`);
   }
 };
