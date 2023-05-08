@@ -435,7 +435,7 @@ const Cover = () => {
                                     НОРМАТИВОВ
                                 </Typography>
                             </Stack>
-                            <Typography variant='cover' sx={{ fontSize: "119px", mt: "-38px", maxWidth: "344px", textAlign: "center" }}>
+                            <Typography variant='cover' sx={{ fontSize: "119px", maxWidth: "344px", textAlign: "center" }}>
                                 ГТО
                             </Typography>
                         </Stack>
@@ -448,7 +448,7 @@ const Cover = () => {
                             <Typography variant='cover' sx={{ fontSize: "85px", maxWidth: "344px", textAlign: "center" }}>
                                 ОТКРЫТЫЕ
                             </Typography>
-                            <Typography variant='cover' sx={{ fontSize: "96px", mt: "-30px", maxWidth: "344px", textAlign: "center" }}>
+                            <Typography variant='cover' sx={{ fontSize: "96px", maxWidth: "344px", textAlign: "center" }}>
                                 ТУРНИРЫ
                             </Typography>
                         </Stack>
