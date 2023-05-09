@@ -276,8 +276,7 @@ const PreviewCover = () => {
                         </Stack>
 
                         <Typography variant='cover' sx={{ fontSize: "36px", maxWidth: "344px", textAlign: "center", whiteSpace: "pre-line", }}>
-                            {`ПОСВЯЩЁННЫЙ 
-                            ПРАЗДНОВАНИЮ 
+                            {`ПОСВЯЩЁННЫЙ ПРАЗДНОВАНИЮ 
                         100-ЛЕТИЯ МОСКОВСКОГО 
                         СПОРТА`}
                         </Typography>
