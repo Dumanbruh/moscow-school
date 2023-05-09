@@ -41,7 +41,7 @@ const Card = ({ isDesktop, name, desc, img, url, date, type }: Props) => {
                     <Typography variant='fieldHeader' sx={{ fontSize: "11px", color: "white", lineHeight: "16.5px", textTransform: "uppercase" }}>{date}</Typography>
                 </Stack>
                 <Typography variant='header' sx={{ fontSize: "64px", lineHeight: "60px", height: name === 'Русская лапта' ? "52px" : "114px" }}>{name}</Typography>
-                <Typography variant='body' sx={{ fontSize: "24px", height: name === 'Русская лапта' ? "260px" : "202px", lineHeight: "28.8px", whiteSpace: "pre-line" }}>
+                <Typography variant='body' sx={{ fontSize: "24px", maxWidth: "571px", height: name === 'Русская лапта' ? "260px" : "202px", lineHeight: "28.8px", whiteSpace: "pre-line" }}>
                     {`${desc}`}
                 </Typography>
                 {type === 'main' && (
@@ -110,7 +110,7 @@ const Card = ({ isDesktop, name, desc, img, url, date, type }: Props) => {
 
             <Stack sx={{ zIndex: 2, px: "20px" }}>
                 <Typography variant='header' sx={{ fontSize: "36px", lineHeight: "36px", minHeight: name === "Настольные спортивные игры" ? "100%" : "72px", letterSpacing: "-1px", textAlign: "center" }}>{name}</Typography>
-                <Typography variant='body' sx={{ fontSize: "14px", mt: "24px", lineHeight: "19px", minHeight: type === 'main' ? "235px" : "206px", whiteSpace: "pre-line" }}>
+                <Typography variant='body' sx={{ fontSize: "14px", mt: "24px", lineHeight: "19px", minHeight: type === 'main' ? "235px" : "206px", maxWidth: "360px", whiteSpace: "pre-line" }}>
                     {`${desc}`}
                 </Typography>
 

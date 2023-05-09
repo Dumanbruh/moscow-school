@@ -80,7 +80,7 @@ const MapBlock = ({ isDesktop }: Props) => {
             }}>
                 <Stack sx={{ width: "100%", justifyContent: "center", alignItems: "center" }} spacing={"32px"}>
                     <Typography variant='header' sx={{ color: "#1B5F60", fontSize: "36px", lineHeight: "36px" }}>КАРТА фестиваля</Typography>
-                    <Stack direction={"row"} spacing={"6px"} sx={{ maxHeight: "250px" }}>
+                    <Stack direction={"row"} spacing={"6px"} sx={{ minHeight: "200px" }}>
                         <Stack sx={{ justifyContent: "space-between" }}>
                             {mapPoints.slice(0, 4).map((point, i) => (
                                 <Stack direction={"row"} spacing={"8px"} sx={{ alignItems: "center", maxWidth: "140px", minHeight: "24px" }} key={i}>

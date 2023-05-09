@@ -35,7 +35,7 @@ const Footer = () => {
                                     Место проведения
                                 </Typography>
                                 <Typography variant='fieldHeader' sx={{ fontSize: "18px" }}>
-                                    ГБОУ ДО СШОР «МОСКВИЧ»
+                                    ГБУ ДО СШОР «МОСКВИЧ»
                                 </Typography>
                                 <Typography variant='fieldHeader' sx={{ fontSize: "18px" }}>
                                     г. Москва, Волгоградский просп., 46/15с7
@@ -164,7 +164,7 @@ const Footer = () => {
                                     Место проведения
                                 </Typography>
                                 <Typography variant='fieldHeader' sx={{ fontSize: "18px" }}>
-                                    ГБОУ ДО СШОР «МОСКВИЧ»
+                                    ГБУ ДО СШОР «МОСКВИЧ»
                                 </Typography>
                                 <Typography variant='fieldHeader' sx={{ fontSize: "18px" }}>
                                     г. Москва, Волгоградский просп., 46/15с7
