@@ -254,11 +254,19 @@ const Cover = () => {
                         boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
                     }}>
                     <Stack spacing={"16px"} sx={{ ml: isMobile ? "34px" : "0px" }}>
-                        <Stack direction={"row"} spacing={isMobile ? "40px" : "20px"}>
+                        <Stack direction={"row"} spacing={isMobile ? "40px" : "18px"}>
                             <Box
                                 component={"img"}
                                 src="/images/logos/navbar/complex-logo.svg"
                                 onClick={() => { window.open('https://www.mos.ru/donm/', '_blank')?.focus() }}
+                                sx={{
+                                    maxHeight: "30px",
+                                }}
+                            />
+                            <Box
+                                component={"img"}
+                                src="/images/logos/navbar/department-logo.svg"
+                                onClick={() => { window.open('https://www.mos.ru/moskomsport/', '_blank')?.focus() }}
                                 sx={{
                                     maxHeight: "30px",
                                 }}
@@ -271,20 +279,12 @@ const Cover = () => {
                                     maxHeight: "30px",
                                 }}
                             />
+                        </Stack>
+                        <Stack direction={"row"} spacing={isMobile ? "16px" : "18px"}>
                             <Box
                                 component={"img"}
                                 src="/images/logos/navbar/moscow-educ-logo.svg"
                                 onClick={() => { window.open('https://shkolamoskva.ru/', '_blank')?.focus() }}
-                                sx={{
-                                    maxHeight: "30px",
-                                }}
-                            />
-                        </Stack>
-                        <Stack direction={"row"} spacing={isMobile ? "16px" : "8px"}>
-                            <Box
-                                component={"img"}
-                                src="/images/logos/navbar/department-logo.svg"
-                                onClick={() => { window.open('https://www.mos.ru/moskomsport/', '_blank')?.focus() }}
                                 sx={{
                                     maxHeight: "30px",
                                 }}
@@ -404,8 +404,7 @@ const Cover = () => {
                             </Stack>
 
                             <Typography variant='cover' sx={{ fontSize: "36px", maxWidth: "344px", textAlign: "center", whiteSpace: "pre-line", }}>
-                                {`ПОСВЯЩЁННЫЙ 
-                                  ПРАЗДНОВАНИЮ 
+                                {`ПОСВЯЩЁННЫЙ ПРАЗДНОВАНИЮ 
                                   100-ЛЕТИЯ МОСКОВСКОГО 
                                   СПОРТА`}
                             </Typography>
