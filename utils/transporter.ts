@@ -1,5 +1,11 @@
 import nodemailer from "nodemailer";
 
+interface Message {
+  to: string;
+  subject: string;
+  html: any;
+}
+
 const transporter = nodemailer.createTransport({
   host: "smtp.eu.mailgun.org",
   port: 587,
@@ -12,12 +18,13 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-export const sendTestEmail = async (email: string): Promise<void> => {
+
+
+export const sendMail = async ({ to, subject, html }: Message): Promise<void> => {
   await transporter.sendMail({
     from: process.env.EMAIL_FROM!,
-    to: email,
-    subject: "Тестовое письмо",
-    text: "Тестовое письмо",
-    html: `Тестовое письмо`,
+    to: to,
+    subject: subject,
+    html: html,
   });
 };

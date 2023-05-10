@@ -16,7 +16,7 @@ const Cover = () => {
     const links = [
         {
             text: "ГЛАВНАЯ",
-            link: "/preview"
+            link: "/"
         },
         {
             text: "ШКОЛЬНЫЕ ЛИГИ",
@@ -143,7 +143,7 @@ const Cover = () => {
                     </Stack>
 
 
-                    {router.pathname === '/' || router.pathname === '/preview' && (
+                    {router.pathname === '/' && (
                         <Stack sx={{
                             width: "100%", height: "100%", justifyContent: "center", alignItems: "center", position: "absolute", zIndex: 3,
                         }} spacing={"78px"}>
@@ -393,7 +393,7 @@ const Cover = () => {
                         <Box component={"img"} sx={{ position: "absolute", height: "50%", right: isMobile ? 0 : "-45%", bottom: 0, zIndex: 12 }} src={"images/bg/mobile/cover/RightBoy.png"} />
                         <Box component={"img"} sx={{ position: "absolute", right: 0, top: 0, zIndex: 2 }} src={"images/bg/mobile/cover/TopRightClouds.png"} />
                     </Stack>
-                    {router.pathname === '/' || router.pathname === '/preview' && (
+                    {router.pathname === '/' && (
                         <Stack sx={{
                             width: "100%", pt: "25%",
                             justifyContent: "center", alignItems: "center", position: "absolute", zIndex: 3

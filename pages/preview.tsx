@@ -14,12 +14,12 @@ const PreviewPage: NextPage = () => {
 
     return (
         <Stack width={"100%"}>
-            <Cover />
+            {/* <Cover />
             <RegisterBlock />
             <InformationBlock isDesktop={isDesktop} />
             <MapBlock isDesktop={isDesktop} />
             <FestivalesBlock isDesktop={isDesktop} />
-            <ScheduleBlock isDesktop={isDesktop} />
+            <ScheduleBlock isDesktop={isDesktop} /> */}
         </Stack>
     )
 }

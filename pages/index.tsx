@@ -11,12 +11,14 @@ import PreviewRegister from "@/components/ui/preview-register";
 
 
 export default function Home() {
-  // const { isDesktop } = useGlobalMediaQuery();
+  const { isDesktop } = useGlobalMediaQuery();
 
   return (
     <Stack width={"100%"}>
-      <PreviewCover />
-      <PreviewRegister />
+      <InformationBlock isDesktop={isDesktop} />
+      <MapBlock isDesktop={isDesktop} />
+      <FestivalesBlock isDesktop={isDesktop} />
+      <ScheduleBlock isDesktop={isDesktop} />
     </Stack>
   )
 }

@@ -3,6 +3,7 @@ import {
     Container,
     Dialog,
     DialogContent,
+    DialogTitle,
     Stack,
     TextField,
     Typography,
@@ -11,38 +12,12 @@ import React, { useState } from "react";
 import useGlobalMediaQuery from "@/hooks/useGlobalMediaQuery";
 import CustomBtn from "../ui/custom-btn";
 import { useDisclosure } from "@/hooks/disclosure";
-import CustomBtnSubmit from "../ui/custom-btn-submit";
-import * as Yup from "yup";
-import { Form } from "@/models/form";
-import axios from "axios";
-import { useFormik } from "formik";
+import MainPageForm from "../forms/main-page-form";
 
 const RegisterBlock = () => {
     const { isDesktop } = useGlobalMediaQuery();
 
     const { isOpen, open, close } = useDisclosure(false);
-
-    const initialValues: Form = {
-        email: "",
-        name: "",
-    };
-
-    const [isSubmitted, setIsSubmitted] = useState(false);
-
-    const formik = useFormik({
-        initialValues: initialValues,
-        validationSchema: Yup.object().shape({
-            email: Yup.string()
-                .email("Неправильная почта")
-                .required("Поле должно быть заполнено"),
-            name: Yup.string().required("Поле должно быть заполнено"),
-        }),
-        onSubmit: (values) => {
-            axios.post("/api/test", values).finally(() => {
-                setIsSubmitted(true);
-            });
-        },
-    });
 
     return (
         <>
@@ -228,9 +203,10 @@ const RegisterBlock = () => {
                 </Box>
             )}
 
+
             <Dialog onClose={close} open={isOpen}>
                 <DialogContent>
-                    <form onSubmit={formik.handleSubmit}>
+                    {/* <form onSubmit={formik.handleSubmit}>
                         <Stack
                             spacing={"24px"}
                             sx={{ minWidth: isDesktop ? "446px" : "100%", display: "block" }}
@@ -290,7 +266,8 @@ const RegisterBlock = () => {
                                 />
                             </Stack>
                         </Stack>
-                    </form>
+                    </form> */}
+                    <MainPageForm isDesktop={isDesktop} />
                 </DialogContent>
             </Dialog>
         </>

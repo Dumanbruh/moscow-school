@@ -2,24 +2,25 @@ import { Alert, Snackbar, Stack, TextField, Typography } from '@mui/material';
 import { useFormik } from 'formik'
 import React, { useState } from 'react'
 import CustomBtnSubmit from '../ui/custom-btn-submit';
-import { Form } from '@/models/form';
+import { Record } from '@/mongo/models/record';
 import axios from 'axios';
-import { useSnackbar } from '@/hooks/useSnackbar';
 import * as Yup from "yup";
+import { useRecords } from '@/hooks/useRecords';
 
 interface Props {
     isDesktop: boolean
 }
 
 const MainPageForm = ({ isDesktop }: Props) => {
-    const initialValues: Form = {
+    const initialValues: Record = {
         email: "",
-        name: ""
+        name: "",
+        date: new Date(),
+        arrived: false
     };
 
-    const { openSnackbar, closeSnackbar, open, message } = useSnackbar();
     const [isSubmitted, setIsSubmitted] = useState(false);
-
+    const { addRecord } = useRecords();
 
     const formik = useFormik({
         initialValues: initialValues,
@@ -28,19 +29,13 @@ const MainPageForm = ({ isDesktop }: Props) => {
             name: Yup.string().required('Поле должно быть заполнено'),
         }),
         onSubmit: (values) => {
-            axios.post("/api/form", values)
-                .then((res) => {
-                    openSnackbar("Вы успешно зарегистрировались!")
-                })
-                .finally(() => {
-                    setIsSubmitted(true)
-                });
+            addRecord(values)
         },
     });
 
     return (
         <form onSubmit={formik.handleSubmit}>
-            <Stack spacing={"24px"} sx={{ minWidth: isDesktop ? "446px" : "100%", display: "block" }}>
+            <Stack spacing={"24px"} sx={{ minWidth: isDesktop ? "446px" : "100%" }}>
                 <Stack spacing={"6px"}>
                     <Typography variant='fieldHeader' sx={{ fontSize: "24px" }}>
                         E-mail
@@ -88,14 +83,9 @@ const MainPageForm = ({ isDesktop }: Props) => {
                     />
                 </Stack>
                 <Stack sx={{ width: "100%", alignItems: "center" }}>
-                    <CustomBtnSubmit title='ПОЛУЧИТЬ ПОДАРОК' height='70px' minWidth={"309px"} disabled={isSubmitted} />
+                    <CustomBtnSubmit title='ПОЛУЧИТЬ ПОДАРОК' height='70px' minWidth={isDesktop ? "309px" : "209px"} disabled={isSubmitted} />
                 </Stack>
             </Stack>
-            <Snackbar open={open} autoHideDuration={6000} onClose={closeSnackbar}>
-                <Alert onClose={closeSnackbar} severity="success" sx={{ width: '100%' }}>
-                    {message}
-                </Alert>
-            </Snackbar>
         </form>
     )
 }

@@ -1,6 +1,4 @@
-import RegisterBlock from '@/components/main-page-components/register'
 import TournamentsBlock from '@/components/tournaments-page-components/tournaments-block'
-import Cover from '@/components/ui/cover'
 import useGlobalMediaQuery from '@/hooks/useGlobalMediaQuery'
 import { Stack } from '@mui/material'
 import { NextPage } from 'next'
@@ -11,8 +9,6 @@ const TournamentsPage: NextPage = () => {
 
     return (
         <Stack sx={{ width: "100%" }}>
-            <Cover />
-            <RegisterBlock />
             <TournamentsBlock isDesktop={isDesktop} />
         </Stack>
     )

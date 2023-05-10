@@ -9,39 +9,53 @@ import Cover from '@/components/ui/cover';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import RegisterBlock from '@/components/main-page-components/register';
+import { AdminProvider } from '@/contexts/admin-context';
+import { SnackbarProvider } from '@/contexts/snackbar-context';
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <>
-    <Head>
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta property="og:title" content="«Фестиваль школьного спорта»" />
-      <meta
-        property="description"
-        content="«19 мая большой спортивный праздник на территории СК 'Москвич'»"
-      />
-      <meta property="og:description" content="«Московский спорт представляет большой фестиваль школьного спорта, посвящённый празднованию 100-летия Московского Спорта»" />
-      <meta property="og:url" content="https://school.moscow.sport/" />
-      <meta property="og:type" content="website" />
-      <meta property="og:image" content="/images/gtoIcon.png" />
-      <title>Фестиваль школьного спорта</title>
-    </Head>
-    <div style={{ display: "none" }} itemScope itemType="https://schema.org/Organization">
-      <span itemProp="name">Фестиваль школьного спорта</span>
-      <div itemProp="address" itemScope itemType="http://schema.org/PostalAddress">
-        Адрес:
-        <span itemProp="streetAddress">Москва, Волгоградский просп., 46/15с7</span>
-      </div>
-      <span itemProp="email">school.moscow.sport@yandex.ru</span>
-      <div itemScope itemType="http://schema.org/ImageObject">
-        <img src="/images/gtoIcon.png" itemProp="contentUrl" />
-      </div>
-    </div>
+export default function App({
+  Component,
+  pageProps: { removeFooter, removeNavbar, ...pageProps } }: AppProps) {
+  return (
     <ThemeProvider theme={theme}>
-      {/* <Cover />
-      <RegisterBlock /> */}
-      <Component {...pageProps} />
-      <Footer />
+      <AdminProvider>
+        <SnackbarProvider>
+          <Head>
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta property="og:title" content="«Фестиваль школьного спорта»" />
+            <meta
+              property="description"
+              content="«19 мая большой спортивный праздник на территории СК 'Москвич'»"
+            />
+            <meta property="og:description" content="«Московский спорт представляет большой фестиваль школьного спорта, посвящённый празднованию 100-летия Московского Спорта»" />
+            <meta property="og:url" content="https://school.moscow.sport/" />
+            <meta property="og:type" content="website" />
+            <meta property="og:image" content="/images/gtoIcon.png" />
+            <title>Фестиваль школьного спорта</title>
+          </Head>
+          <div style={{ display: "none" }} itemScope itemType="https://schema.org/Organization">
+            <span itemProp="name">Фестиваль школьного спорта</span>
+            <div itemProp="address" itemScope itemType="http://schema.org/PostalAddress">
+              Адрес:
+              <span itemProp="streetAddress">Москва, Волгоградский просп., 46/15с7</span>
+            </div>
+            <span itemProp="email">school.moscow.sport@yandex.ru</span>
+            <div itemScope itemType="http://schema.org/ImageObject">
+              <img src="/images/gtoIcon.png" itemProp="contentUrl" />
+            </div>
+          </div>
+
+          {removeNavbar ? null : (
+            <>
+              <Cover />
+              <RegisterBlock />
+            </>
+          )}
+          <Component {...pageProps} />
+          {removeFooter ? null : <Footer />}
+        </SnackbarProvider>
+      </AdminProvider>
     </ThemeProvider>
-  </>
+  );
+
 
 }
