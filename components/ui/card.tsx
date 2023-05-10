@@ -1,6 +1,7 @@
 import { Box, Stack, Typography } from '@mui/material'
 import React from 'react'
 import CustomBtn from './custom-btn'
+import RecordForm from '../forms/record-form';
 
 interface Props {
     isDesktop: boolean;
@@ -50,9 +51,7 @@ const Card = ({ isDesktop, name, desc, img, url, date, type }: Props) => {
                             <Typography variant='body' sx={{ color: "white", fontSize: "18px" }}>ПОДРОБНЕЕ</Typography>
                         </CustomBtn>
                         {name !== "мастер-классы" && (
-                            <CustomBtn height='96px' bg='white' onClick={() => { }} minWidth='255px'>
-                                <Typography variant='body' sx={{ color: "#563F42", fontSize: "18px" }}>БУДУ ЗРИТЕЛЕМ</Typography>
-                            </CustomBtn>
+                            <RecordForm isDesktop={isDesktop} isViewer={true} />
                         )}
                     </Stack>
                 )}
@@ -61,9 +60,7 @@ const Card = ({ isDesktop, name, desc, img, url, date, type }: Props) => {
                         <CustomBtn height='96px' bg='linear-gradient(90deg, #FF6373 0%, #CC1427 100%)' onClick={() => { window.open(url, '_blank')?.focus() }} minWidth='255px'>
                             <Typography variant='body' sx={{ color: "white", fontSize: "18px" }}>ПОДРОБНЕЕ</Typography>
                         </CustomBtn>
-                        <CustomBtn height='96px' bg='white' onClick={() => { }} minWidth='255px'>
-                            <Typography variant='body' sx={{ color: "#563F42", fontSize: "18px" }}>БУДУ ЗРИТЕЛЕМ</Typography>
-                        </CustomBtn>
+                        <RecordForm isDesktop={isDesktop} isViewer={true} />
                     </Stack>
                 )}
                 {type === 'master' && (
@@ -71,9 +68,7 @@ const Card = ({ isDesktop, name, desc, img, url, date, type }: Props) => {
                         <CustomBtn height='96px' bg='linear-gradient(90deg, #FF6373 0%, #CC1427 100%)' onClick={() => { window.open(url, '_blank')?.focus() }} minWidth='255px'>
                             <Typography variant='body' sx={{ color: "white", fontSize: "18px" }}>ЗАПИСАТЬСЯ</Typography>
                         </CustomBtn>
-                        <CustomBtn height='96px' bg='white' onClick={() => { }} minWidth='255px'>
-                            <Typography variant='body' sx={{ color: "#563F42", fontSize: "18px" }}>БУДУ ЗРИТЕЛЕМ</Typography>
-                        </CustomBtn>
+                        <RecordForm isDesktop={isDesktop} isViewer={true} />
                     </Stack>
                 )}
             </Stack>
@@ -120,9 +115,7 @@ const Card = ({ isDesktop, name, desc, img, url, date, type }: Props) => {
                             <Typography variant='body' sx={{ color: "white", fontSize: "18px" }}>ПОДРОБНЕЕ</Typography>
                         </CustomBtn>
                         {name !== "мастер-классы" && (
-                            <CustomBtn height='64px' bg='white' onClick={() => { }}>
-                                <Typography variant='body' sx={{ color: "#563F42", fontSize: "18px" }}>БУДУ ЗРИТЕЛЕМ</Typography>
-                            </CustomBtn>
+                            <RecordForm isDesktop={isDesktop} isViewer={true} />
                         )}
                     </Stack>
                 )}
@@ -131,9 +124,7 @@ const Card = ({ isDesktop, name, desc, img, url, date, type }: Props) => {
                         <CustomBtn height='64px' bg='linear-gradient(90deg, #FF6373 0%, #CC1427 100%)' onClick={() => { }}>
                             <Typography variant='body' sx={{ color: "white", fontSize: "18px" }}>ПОДРОБНЕЕ</Typography>
                         </CustomBtn>
-                        <CustomBtn height='64px' bg='white' onClick={() => { }}>
-                            <Typography variant='body' sx={{ color: "#563F42", fontSize: "18px" }}>БУДУ ЗРИТЕЛЕМ</Typography>
-                        </CustomBtn>
+                        <RecordForm isDesktop={isDesktop} isViewer={true} />
                     </Stack>
                 )}
                 {type === 'master' && (
@@ -141,9 +132,7 @@ const Card = ({ isDesktop, name, desc, img, url, date, type }: Props) => {
                         <CustomBtn height='64px' bg='linear-gradient(90deg, #FF6373 0%, #CC1427 100%)' onClick={() => { }}>
                             <Typography variant='body' sx={{ color: "white", fontSize: "18px" }}>ЗАПИСАТЬСЯ</Typography>
                         </CustomBtn>
-                        <CustomBtn height='64px' bg='white' onClick={() => { }}>
-                            <Typography variant='body' sx={{ color: "#563F42", fontSize: "18px" }}>БУДУ ЗРИТЕЛЕМ</Typography>
-                        </CustomBtn>
+                        <RecordForm isDesktop={isDesktop} isViewer={true} />
                     </Stack>
                 )}
             </Stack>

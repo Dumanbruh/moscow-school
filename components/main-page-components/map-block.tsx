@@ -29,11 +29,15 @@ const MapBlock = ({ isDesktop }: Props) => {
 
     return isDesktop ? (
         <Box sx={{
-            minHeight: 781, width: "100%", backgroundImage: "url(/images/bg/desktop/map/map.png)", backgroundPositionX: "0px",
-            backgroundRepeat: "no-repeat",
+            minHeight: 781, width: "100%",
             pt: "64px",
             position: "relative"
         }}>
+            <Box
+                component={"img"}
+                sx={{ position: "absolute", left: 0, bottom: 0, zIndex: 1 }}
+                src={"images/bg/desktop/map/left.png"}
+            />
             <Box
                 component={"img"}
                 sx={{ position: "absolute", left: 0, bottom: 0, zIndex: 1 }}
@@ -42,20 +46,29 @@ const MapBlock = ({ isDesktop }: Props) => {
             <Stack sx={{ width: "100%", justifyContent: "center", alignItems: "center" }}>
                 <Typography variant='header' sx={{ color: "#1B5F60", fontSize: "64px", lineHeight: "64px" }}>КАРТА фестиваля</Typography>
             </Stack>
-            <Stack spacing={"10px"} sx={{
-                maxWidth: "252px", position: "absolute", right: "104px", top: "193px"
-            }}>
-                {mapPoints.map((point, i) => (
-                    <Stack direction={"row"} spacing={"8px"} sx={{ alignItems: "center" }} key={i}>
-                        <Typography variant='header' sx={{ fontSize: "24px", lineHeight: "24px", color: "black", width: "6%" }}>
-                            {i + 1}
-                        </Typography>
-                        <Typography variant='header' sx={{ fontSize: "16px", lineHeight: "16px", color: "black", width: "90%" }}>
-                            {point}
-                        </Typography>
-                    </Stack>
-                ))}
+            <Stack direction={"row"} spacing={"20px"} sx={{ width: "100%", justifyContent: "center" }}>
+                <Box
+                    component={"img"}
+                    sx={{ zIndex: 1 }}
+                    src={"images/bg/desktop/map/map.png"}
+                />
+                <Stack spacing={"10px"} sx={{
+                    maxWidth: "252px",
+                    justifyContent: "center"
+                }}>
+                    {mapPoints.map((point, i) => (
+                        <Stack direction={"row"} spacing={"8px"} sx={{ alignItems: "center" }} key={i}>
+                            <Typography variant='header' sx={{ fontSize: "24px", lineHeight: "24px", color: "black", width: "6%" }}>
+                                {i + 1}
+                            </Typography>
+                            <Typography variant='header' sx={{ fontSize: "16px", lineHeight: "16px", color: "black", width: "90%" }}>
+                                {point}
+                            </Typography>
+                        </Stack>
+                    ))}
+                </Stack>
             </Stack>
+
         </Box>
     ) : (
         <Stack sx={{

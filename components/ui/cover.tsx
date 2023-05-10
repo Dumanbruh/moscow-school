@@ -164,7 +164,7 @@ const Cover = () => {
                         }}>
                             <Stack>
                                 <Typography variant='cover' sx={{ fontSize: "187px", maxWidth: "625px" }}>ФИНАЛЫ</Typography>
-                                <Typography variant='cover' sx={{ fontSize: "142px", maxWidth: "625px", mt: "-40px" }}>ШКОЛЬНЫХ</Typography>
+                                <Typography variant='cover' sx={{ fontSize: "142px", maxWidth: "625px" }}>ШКОЛЬНЫХ</Typography>
                             </Stack>
                             <Typography variant='cover' sx={{ fontSize: "92px", maxWidth: "625px", textAlign: "center" }}>
                                 СПОРТИВНЫХ ЛИГ
@@ -182,7 +182,7 @@ const Cover = () => {
                                     НОРМАТИВОВ
                                 </Typography>
                             </Stack>
-                            <Typography variant='cover' sx={{ fontSize: "187px", mt: "-38px", maxWidth: "625px", textAlign: "center" }}>
+                            <Typography variant='cover' sx={{ fontSize: "187px", maxWidth: "625px", textAlign: "center" }}>
                                 ГТО
                             </Typography>
                         </Stack>
@@ -195,7 +195,7 @@ const Cover = () => {
                             <Typography variant='cover' sx={{ fontSize: "178px", maxWidth: "625px", textAlign: "center" }}>
                                 ОТКРЫТЫЕ
                             </Typography>
-                            <Typography variant='cover' sx={{ fontSize: "201px", mt: "-30px", maxWidth: "625px", textAlign: "center" }}>
+                            <Typography variant='cover' sx={{ fontSize: "201px", maxWidth: "625px", textAlign: "center" }}>
                                 ТУРНИРЫ
                             </Typography>
                         </Stack>
@@ -416,7 +416,7 @@ const Cover = () => {
                         }}>
                             <Stack>
                                 <Typography variant='cover' sx={{ fontSize: "96px", maxWidth: "344px" }}>ФИНАЛЫ</Typography>
-                                <Typography variant='cover' sx={{ fontSize: "73px", maxWidth: "344px", mt: "-20px" }}>ШКОЛЬНЫХ</Typography>
+                                <Typography variant='cover' sx={{ fontSize: "73px", maxWidth: "344px" }}>ШКОЛЬНЫХ</Typography>
                             </Stack>
                             <Typography variant='cover' sx={{ fontSize: "46px", maxWidth: "344px", textAlign: "center" }}>
                                 СПОРТИВНЫХ ЛИГ

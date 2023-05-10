@@ -23,7 +23,7 @@ const FestivalesBlock = ({ isDesktop }: Props) => {
             desc: `В московском городском этапе Всероссийских соревнований приняли участие 57 команд, и решающие матчи состоятся в рамках фестиваля.`,
             date: "19 МАЯ",
             img: "url(/images/main-page/2.png)",
-            url: "/"
+            url: "https://football.moscow.sport/"
         },
         {
             name: "фестиваль ГТО",
@@ -37,7 +37,7 @@ const FestivalesBlock = ({ isDesktop }: Props) => {
             desc: `Это вид спортивного ориентирования, в котором участники сами решают, по какому маршруту двигаться в пределах предложенной карты, чтобы собрать максимальное количество контрольных пунктов.`,
             date: "19 МАЯ",
             img: "url(/images/main-page/4.png)",
-            url: "/"
+            url: "https://football.moscow.sport/"
         },
         {
             name: "открытые турниры",

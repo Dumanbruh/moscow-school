@@ -1,23 +1,17 @@
 import {
     Box,
     Container,
-    Dialog,
-    DialogContent,
-    DialogTitle,
     Stack,
-    TextField,
     Typography,
 } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 import useGlobalMediaQuery from "@/hooks/useGlobalMediaQuery";
 import CustomBtn from "../ui/custom-btn";
-import { useDisclosure } from "@/hooks/disclosure";
-import MainPageForm from "../forms/main-page-form";
+import RecordForm from "../forms/record-form";
+
 
 const RegisterBlock = () => {
     const { isDesktop } = useGlobalMediaQuery();
-
-    const { isOpen, open, close } = useDisclosure(false);
 
     return (
         <>
@@ -85,21 +79,7 @@ const RegisterBlock = () => {
                                     {`Приходи и получи подарок от Московского спорта`}
                                 </Typography>
                                 <Stack spacing={"15px"}>
-                                    <CustomBtn
-                                        height="70px"
-                                        bg="linear-gradient(266.01deg, #DE3042 -38.53%, #FD5F6F 111.85%)"
-                                        onClick={() => {
-                                            open();
-                                        }}
-                                        minWidth="309px"
-                                    >
-                                        <Typography
-                                            variant="footerHeader"
-                                            sx={{ color: "white", fontSize: "18px" }}
-                                        >
-                                            ПОЛУЧИТЬ ПОДАРОК
-                                        </Typography>
-                                    </CustomBtn>
+                                    <RecordForm isViewer={false} isDesktop={isDesktop} />
                                     <Typography
                                         variant="fieldHeader"
                                         sx={{ color: "#30303E", fontSize: "16px" }}
@@ -177,21 +157,7 @@ const RegisterBlock = () => {
                             {`Приходи и получи подарок от Московского спорта`}
                         </Typography>
                         <Stack spacing={"15px"}>
-                            <CustomBtn
-                                height="70px"
-                                bg="linear-gradient(266.01deg, #DE3042 -38.53%, #FD5F6F 111.85%)"
-                                onClick={() => {
-                                    open();
-                                }}
-                                minWidth="309px"
-                            >
-                                <Typography
-                                    variant="footerHeader"
-                                    sx={{ color: "white", fontSize: "18px" }}
-                                >
-                                    ПОЛУЧИТЬ ПОДАРОК
-                                </Typography>
-                            </CustomBtn>
+                            <RecordForm isViewer={false} isDesktop={isDesktop} />
                             <Typography
                                 variant="fieldHeader"
                                 sx={{ color: "#30303E", fontSize: "16px" }}
@@ -202,74 +168,6 @@ const RegisterBlock = () => {
                     </Stack>
                 </Box>
             )}
-
-
-            <Dialog onClose={close} open={isOpen}>
-                <DialogContent>
-                    {/* <form onSubmit={formik.handleSubmit}>
-                        <Stack
-                            spacing={"24px"}
-                            sx={{ minWidth: isDesktop ? "446px" : "100%", display: "block" }}
-                        >
-                            <Stack spacing={"6px"}>
-                                <Typography variant="fieldHeader" sx={{ fontSize: "24px" }}>
-                                    E-mail
-                                </Typography>
-                                <TextField
-                                    fullWidth
-                                    id="email"
-                                    name="email"
-                                    value={formik.values.email}
-                                    onChange={formik.handleChange}
-                                    error={formik.touched.email && Boolean(formik.errors.email)}
-                                    helperText={formik.touched.email && formik.errors.email}
-                                    sx={{
-                                        input: {
-                                            background: "white",
-                                            border: "1px solid #C4C4C4",
-                                            borderRadius: "3px",
-                                        },
-                                    }}
-                                    disabled={isSubmitted}
-                                />
-                            </Stack>
-
-                            <Stack spacing={"6px"}>
-                                <Typography variant="fieldHeader" sx={{ fontSize: "24px" }}>
-                                    Ваше имя
-                                </Typography>
-                                <TextField
-                                    fullWidth
-                                    id="name"
-                                    name="name"
-                                    type="name"
-                                    value={formik.values.name}
-                                    onChange={formik.handleChange}
-                                    error={formik.touched.name && Boolean(formik.errors.name)}
-                                    helperText={formik.touched.name && formik.errors.name}
-                                    sx={{
-                                        input: {
-                                            background: "white",
-                                            border: "1px solid #C4C4C4",
-                                            borderRadius: "3px",
-                                        },
-                                    }}
-                                    disabled={isSubmitted}
-                                />
-                            </Stack>
-                            <Stack sx={{ width: "100%", alignItems: "center" }}>
-                                <CustomBtnSubmit
-                                    title="ПОЛУЧИТЬ ПОДАРОК"
-                                    height="70px"
-                                    minWidth={"309px"}
-                                    disabled={isSubmitted}
-                                />
-                            </Stack>
-                        </Stack>
-                    </form> */}
-                    <MainPageForm isDesktop={isDesktop} />
-                </DialogContent>
-            </Dialog>
         </>
     );
 };

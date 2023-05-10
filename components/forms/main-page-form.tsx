@@ -29,7 +29,8 @@ const MainPageForm = ({ isDesktop }: Props) => {
             name: Yup.string().required('Поле должно быть заполнено'),
         }),
         onSubmit: (values) => {
-            addRecord(values)
+            addRecord(values);
+            setIsSubmitted(true);
         },
     });
 
@@ -83,7 +84,7 @@ const MainPageForm = ({ isDesktop }: Props) => {
                     />
                 </Stack>
                 <Stack sx={{ width: "100%", alignItems: "center" }}>
-                    <CustomBtnSubmit title='ПОЛУЧИТЬ ПОДАРОК' height='70px' minWidth={isDesktop ? "309px" : "209px"} disabled={isSubmitted} />
+                    <CustomBtnSubmit title='Отправить' height='70px' minWidth={isDesktop ? "309px" : "209px"} disabled={isSubmitted} />
                 </Stack>
             </Stack>
         </form>
