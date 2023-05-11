@@ -37,7 +37,7 @@ const FestivalesBlock = ({ isDesktop }: Props) => {
             desc: `Это вид спортивного ориентирования, в котором участники сами решают, по какому маршруту двигаться в пределах предложенной карты, чтобы собрать максимальное количество контрольных пунктов.`,
             date: "19 МАЯ",
             img: "url(/images/main-page/4.png)",
-            url: "https://football.moscow.sport/"
+            url: "https://orgeo.ru/event/28455"
         },
         {
             name: "открытые турниры",
