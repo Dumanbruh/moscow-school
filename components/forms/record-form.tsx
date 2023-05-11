@@ -47,28 +47,32 @@ const RecordForm = ({ isDesktop, isViewer }: RecordProps) => {
 
     return (
         <>
-            {isViewer ? (<CustomBtn
-                height='96px'
-                bg='white'
-                onClick={() => {
-                    open();
-                }} minWidth='255px'>
-                <Typography variant='body' sx={{ color: "#563F42", fontSize: "18px" }}>БУДУ ЗРИТЕЛЕМ</Typography>
-            </CustomBtn>) : (<CustomBtn
-                height="70px"
-                bg="linear-gradient(266.01deg, #DE3042 -38.53%, #FD5F6F 111.85%)"
-                onClick={() => {
-                    open();
-                }}
-                minWidth="309px"
-            >
-                <Typography
-                    variant="footerHeader"
-                    sx={{ color: "white", fontSize: "18px" }}
+            {isViewer ? (
+                <CustomBtn
+                    height={isDesktop ? '96px' : '64px'}
+                    bg='white'
+                    onClick={() => {
+                        open();
+                    }} minWidth={isDesktop ? '255px' : "100%"}>
+                    <Typography variant='body' sx={{ color: "#563F42", fontSize: "18px" }}>БУДУ ЗРИТЕЛЕМ</Typography>
+                </CustomBtn >
+            ) : (
+                <CustomBtn
+                    height="70px"
+                    bg="linear-gradient(266.01deg, #DE3042 -38.53%, #FD5F6F 111.85%)"
+                    onClick={() => {
+                        open();
+                    }}
+                    minWidth="309px"
                 >
-                    ПОЛУЧИТЬ ПОДАРОК
-                </Typography>
-            </CustomBtn>)}
+                    <Typography
+                        variant="footerHeader"
+                        sx={{ color: "white", fontSize: "18px" }}
+                    >
+                        ПОЛУЧИТЬ ПОДАРОК
+                    </Typography>
+                </CustomBtn>)
+            }
 
             <Dialog onClose={close} open={isOpen}>
                 <DialogContent>
