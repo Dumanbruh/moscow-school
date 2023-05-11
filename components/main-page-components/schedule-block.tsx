@@ -42,7 +42,7 @@ const ScheduleBlock = ({ isDesktop }: Props) => {
     const dates = [
         {
             date: "10:05 – 10:15",
-            scene: "Разминка от Московского спорта"
+            scene: "Разминка от проекта «Мой спортивный район»"
         },
         {
             date: "10:15 – 11:30",

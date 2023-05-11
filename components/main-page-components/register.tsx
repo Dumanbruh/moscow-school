@@ -4,16 +4,25 @@ import {
     Stack,
     Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import useGlobalMediaQuery from "@/hooks/useGlobalMediaQuery";
-import CustomBtn from "../ui/custom-btn";
 import RecordForm from "../forms/record-form";
+import { useSettings } from "@/hooks/useSettings";
 
 
 const RegisterBlock = () => {
     const { isDesktop } = useGlobalMediaQuery();
+    const { getSetting } = useSettings();
+    const [available, setAvailable] = React.useState(true);
 
-    return (
+    useEffect(() => {
+        getSetting()
+            .then((res) => {
+                setAvailable(res.data.available)
+            })
+    }, [])
+
+    return available ? (
         <>
             {isDesktop ? (
                 <Box
@@ -169,7 +178,7 @@ const RegisterBlock = () => {
                 </Box>
             )}
         </>
-    );
+    ) : (<></>);
 };
 
 export default RegisterBlock;

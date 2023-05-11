@@ -7,106 +7,106 @@ import { randomInt } from "crypto";
 import { ObjectId, WithId } from "mongodb";
 
 export const getRecords = async (): Promise<
-    BackendFunction<WithId<Record>[]>
+  BackendFunction<WithId<Record>[]>
 > => {
-    try {
-        const cursor = recordsCol.find().sort({ date: 1 });
-        const events = await cursor.toArray();
-        const result = events;
+  try {
+    const cursor = recordsCol.find().sort({ date: 1 });
+    const events = await cursor.toArray();
+    const result = events;
 
-        return [result, null];
-    } catch (e) {
-        const err = e as Error;
-        return [null, err];
-    }
+    return [result, null];
+  } catch (e) {
+    const err = e as Error;
+    return [null, err];
+  }
 };
 
 export const addRecord = async (
-    record: Record
+  record: Record
 ): Promise<BackendFunction<string>> => {
-    const cursor = recordsCol.find({
-        email: record.email,
-    });
+  const cursor = recordsCol.find({
+    email: record.email,
+  });
 
-    if ((await cursor.toArray()).length !== 0) {
-        let err = new Error("Этот email уже использован");
-        return [null, err];
-    }
+  if ((await cursor.toArray()).length !== 0) {
+    let err = new Error("Этот email уже использован");
+    return [null, err];
+  }
 
-    record.date = new Date(record.date);
-    record.code = randomInt(100000, 999999);
-    record.name = record.name.trim();
+  record.date = new Date(record.date);
+  record.code = randomInt(100000, 999999);
+  record.name = record.name.trim();
 
-    await recordsCol.insertOne(record);
+  await recordsCol.insertOne(record);
 
-    try {
-        let msg = {
-            to: record.email,
-            subject: "День Физкультурника: запись подтверждена",
-            html: recordHTML(record.code),
-        };
+  try {
+    let msg = {
+      to: record.email,
+      subject: "День Физкультурника: запись подтверждена",
+      html: recordHTML(record.code),
+    };
 
-        sendMail(msg)
+    sendMail(msg);
 
-        const result = "Вы успешно зарегистрировались";
+    const result = "Вы успешно зарегистрировались";
 
-        return [result, null];
-    } catch (e) {
-        const err = e as Error;
-        return [null, err];
-    }
+    return [result, null];
+  } catch (e) {
+    const err = e as Error;
+    return [null, err];
+  }
 };
 
 export const deleteRecord = async (
-    recordId: string
+  recordId: string
 ): Promise<BackendFunction<string>> => {
-    try {
-        const filter = { _id: new ObjectId(recordId) };
+  try {
+    const filter = { _id: new ObjectId(recordId) };
 
-        await recordsCol.deleteOne(filter);
+    await recordsCol.deleteOne(filter);
 
-        const result = "Запись удалена";
+    const result = "Запись удалена";
 
-        return [result, null];
-    } catch (e) {
-        const err = e as Error;
-        return [null, err];
-    }
+    return [result, null];
+  } catch (e) {
+    const err = e as Error;
+    return [null, err];
+  }
 };
 
 export const getRecordByData = async (
-    code: number
+  code: number
 ): Promise<BackendFunction<Record>> => {
-    try {
-        const doc = await recordsCol.findOne({ code });
+  try {
+    const doc = await recordsCol.findOne({ code });
 
-        if (doc === null) {
-            let err = new Error("Такого кода в базе нету");
-            return [null, err];
-        }
-
-        const result = doc;
-
-        return [result, null];
-    } catch (e) {
-        const err = e as Error;
-        return [null, err];
+    if (doc === null) {
+      let err = new Error("Такого кода в базе нету");
+      return [null, err];
     }
+
+    const result = doc;
+
+    return [result, null];
+  } catch (e) {
+    const err = e as Error;
+    return [null, err];
+  }
 };
 
 export const validateRecord = async (
-    recordId: string
+  recordId: string
 ): Promise<BackendFunction<string>> => {
-    try {
-        const filter = { _id: new ObjectId(recordId) };
+  try {
+    const filter = { _id: new ObjectId(recordId) };
 
-        await recordsCol.updateOne(filter, { $set: { arrived: true } });
+    await recordsCol.updateOne(filter, { $set: { arrived: true } });
 
-        const result = "Запись подтверждена";
+    const result = "Запись подтверждена";
 
-        return [result, null];
-    } catch (e) {
-        const err = e as Error;
-        return [null, err];
-    }
+    return [result, null];
+  } catch (e) {
+    const err = e as Error;
+    return [null, err];
+  }
 };

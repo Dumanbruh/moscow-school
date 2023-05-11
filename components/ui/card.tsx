@@ -111,7 +111,7 @@ const Card = ({ isDesktop, name, desc, img, url, date, type }: Props) => {
 
                 {type === 'main' && (
                     <Stack direction={"column"} spacing={"16px"} sx={{ px: "11%", mt: "13px", justifyContent: 'center', minHeight: '144px' }}>
-                        <CustomBtn height='64px' bg='linear-gradient(90deg, #FF6373 0%, #CC1427 100%)' onClick={() => { }}>
+                        <CustomBtn height='64px' bg='linear-gradient(90deg, #FF6373 0%, #CC1427 100%)' onClick={() => { window.open(url, '_blank')?.focus() }}>
                             <Typography variant='body' sx={{ color: "white", fontSize: "18px" }}>ПОДРОБНЕЕ</Typography>
                         </CustomBtn>
                         {name !== "мастер-классы" && (
@@ -121,7 +121,7 @@ const Card = ({ isDesktop, name, desc, img, url, date, type }: Props) => {
                 )}
                 {type === 'tournament' && (
                     <Stack direction={"column"} spacing={"16px"} sx={{ px: "11%", mt: "13px", justifyContent: 'center', minHeight: '144px' }}>
-                        <CustomBtn height='64px' bg='linear-gradient(90deg, #FF6373 0%, #CC1427 100%)' onClick={() => { }}>
+                        <CustomBtn height='64px' bg='linear-gradient(90deg, #FF6373 0%, #CC1427 100%)' onClick={() => { window.open(url, '_blank')?.focus() }}>
                             <Typography variant='body' sx={{ color: "white", fontSize: "18px" }}>ПОДРОБНЕЕ</Typography>
                         </CustomBtn>
                         <RecordForm isDesktop={isDesktop} isViewer={true} />
@@ -129,7 +129,7 @@ const Card = ({ isDesktop, name, desc, img, url, date, type }: Props) => {
                 )}
                 {type === 'master' && (
                     <Stack direction={"column"} spacing={"16px"} sx={{ px: "11%", mt: "13px", justifyContent: 'center', minHeight: '144px' }}>
-                        <CustomBtn height='64px' bg='linear-gradient(90deg, #FF6373 0%, #CC1427 100%)' onClick={() => { }}>
+                        <CustomBtn height='64px' bg='linear-gradient(90deg, #FF6373 0%, #CC1427 100%)' onClick={() => { window.open(url, '_blank')?.focus() }}>
                             <Typography variant='body' sx={{ color: "white", fontSize: "18px" }}>ЗАПИСАТЬСЯ</Typography>
                         </CustomBtn>
                         <RecordForm isDesktop={isDesktop} isViewer={true} />

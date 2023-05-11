@@ -13,6 +13,7 @@ import {
     Typography,
 } from "@mui/material";
 import CustomBtn from '../ui/custom-btn';
+import { useSettings } from '@/hooks/useSettings';
 
 interface RecordProps {
     isDesktop: boolean;
@@ -20,6 +21,16 @@ interface RecordProps {
 }
 
 const RecordForm = ({ isDesktop, isViewer }: RecordProps) => {
+    const { getSetting } = useSettings();
+    const [available, setAvailable] = React.useState(true);
+
+    React.useEffect(() => {
+        getSetting()
+            .then((res) => {
+                setAvailable(res.data.available)
+            })
+    }, [])
+
     const { isOpen, open, close } = useDisclosure(false);
 
     const initialValues: Record = {
@@ -45,7 +56,7 @@ const RecordForm = ({ isDesktop, isViewer }: RecordProps) => {
         },
     });
 
-    return (
+    return available ? (
         <>
             {isViewer ? (
                 <CustomBtn
@@ -141,7 +152,7 @@ const RecordForm = ({ isDesktop, isViewer }: RecordProps) => {
             </Dialog>
         </>
 
-    )
+    ) : (<></>)
 }
 
 export default RecordForm
