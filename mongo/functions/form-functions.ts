@@ -25,7 +25,7 @@ export const addRecord = async (
   record: Record
 ): Promise<BackendFunction<string>> => {
   const cursor = recordsCol.find({
-    email: record.email,
+    email: record.email.toLowerCase(),
   });
 
   if ((await cursor.toArray()).length !== 0) {
