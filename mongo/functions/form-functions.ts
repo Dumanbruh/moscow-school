@@ -42,7 +42,7 @@ export const addRecord = async (
   try {
     let msg = {
       to: record.email,
-      subject: "День Физкультурника: запись подтверждена",
+      subject: '19 мая в СК "Москвич"',
       html: recordHTML(record.code),
     };
 

@@ -22,7 +22,7 @@ const transporter = nodemailer.createTransport({
 
 export const sendMail = async ({ to, subject, html }: Message): Promise<void> => {
   await transporter.sendMail({
-    from: process.env.EMAIL_FROM!,
+    from: `Фестиваль школьного спорта ${process.env.EMAIL_FROM!}`,
     to: to,
     subject: subject,
     html: html,
