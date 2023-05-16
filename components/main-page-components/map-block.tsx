@@ -12,7 +12,8 @@ const MapBlock = ({ isDesktop }: Props) => {
         "СЦЕНА (ФИТНЕС-АЭРОБИКА)",
         "ЗОНА АКТИВНОСТЕЙ (СКИПИНГ, ПРЫЖКИ ЧЕРЕЗ РЕЗИНКУ, НАСТОЛЬНЫЕ ИГРЫ)",
         "ФИНАЛ «КОЖАНЫЙ МЯЧ»",
-        "ФИНАЛ ШСЛ ПО ФУТБОЛУ,ТУРНИР «ФУТБОЛ В ШКОЛЕ»",
+        `ФИНАЛ ШСЛ ПО ФУТБОЛУ, 
+        ТУРНИР «ФУТБОЛ В ШКОЛЕ»`,
         "ГТО",
         "КОНТЕЙНЕР ГТО",
         "ГТО ПЛАВАНИЕ",
@@ -61,7 +62,7 @@ const MapBlock = ({ isDesktop }: Props) => {
                             <Typography variant='header' sx={{ fontSize: "24px", lineHeight: "24px", color: "black", width: "6%" }}>
                                 {i + 1}
                             </Typography>
-                            <Typography variant='header' sx={{ fontSize: "16px", lineHeight: "16px", color: "black", width: "90%" }}>
+                            <Typography variant='header' sx={{ fontSize: "16px", lineHeight: "16px", color: "black", width: "90%", whiteSpace: "pre-line" }}>
                                 {point}
                             </Typography>
                         </Stack>
@@ -100,7 +101,7 @@ const MapBlock = ({ isDesktop }: Props) => {
                                     <Typography variant='header' sx={{ fontSize: "24px", lineHeight: "24px", color: "black", width: "11%" }}>
                                         {i + 1}
                                     </Typography>
-                                    <Typography variant='header' sx={{ fontSize: "14px", lineHeight: "14px", color: "black", width: "89%" }}>
+                                    <Typography variant='header' sx={{ fontSize: "14px", lineHeight: "14px", color: "black", width: "89%", whiteSpace: "pre-line" }}>
                                         {point}
                                     </Typography>
                                 </Stack>
