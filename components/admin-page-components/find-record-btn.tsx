@@ -37,6 +37,7 @@ const FindRecordButton = () => {
             })
             .catch((err) => {
                 setCode("");
+                setRecord(null);
                 if (err.response) {
                     updateSnackbar(
                         true,
@@ -67,58 +68,46 @@ const FindRecordButton = () => {
             <Modal open={isOpen} onClose={handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description">
-                {record ? (
-                    <>
-                        <Stack sx={{
-                            position: 'absolute',
-                            top: '50%',
-                            left: '50%',
-                            transform: 'translate(-50%, -50%)',
-                            width: 400,
-                            bgcolor: 'background.paper',
-                            boxShadow: 24,
-                            p: 4,
-                        }}
-                            spacing={"20px"}>
-                            <Typography variant="body">Имя: {record.name}</Typography>
-                            <Typography variant="body">Email: {record.email}</Typography>
-                            <Typography variant="body">
-                                Дата записи: {moment(record.date).tz("Europe/Moscow").format("lll")}
-                            </Typography>
-                            <Typography variant="body" sx={{ color: record.arrived ? "green" : "red" }}>
-                                Статус: {record.arrived ? "Прибыл" : "Не прибыл"}
-                            </Typography>
-                            <Typography variant="body">Код: {record.code}</Typography>
-                            {!record.arrived && (
-                                <Button onClick={handleValidate}>Подтвердить</Button>
-                            )}
-                        </Stack>
-                    </>
-                ) : (
-                    <>
-                        <Stack sx={{
-                            position: 'absolute',
-                            top: '50%',
-                            left: '50%',
-                            transform: 'translate(-50%, -50%)',
-                            width: 400,
-                            bgcolor: 'background.paper',
-                            boxShadow: 24,
-                            p: 4,
-                        }} spacing={3}>
-                            <Input
-                                name="code"
-                                onChange={handleChange}
-                                value={code}
-                                placeholder="Код"
-                                type={"number"}
-                            />
+                <>
+                    <Stack sx={{
+                        position: 'absolute',
+                        top: '50%',
+                        left: '50%',
+                        transform: 'translate(-50%, -50%)',
+                        width: 400,
+                        bgcolor: 'background.paper',
+                        boxShadow: 24,
+                        p: 4,
+                    }} spacing={3}>
+                        <Input
+                            name="code"
+                            onChange={handleChange}
+                            value={code}
+                            placeholder="Код"
+                            type={"number"}
+                        />
 
-                            <Button onClick={handleSearch}>Поиск</Button>
-                        </Stack>
-                    </>
-                )}
+                        <Button onClick={handleSearch}>Поиск</Button>
+                        {record && (
+                            <>
 
+                                <Typography variant="body">Имя: {record.name}</Typography>
+                                <Typography variant="body">Email: {record.email}</Typography>
+                                <Typography variant="body">
+                                    Дата записи: {moment(record.date).tz("Europe/Moscow").format("lll")}
+                                </Typography>
+                                <Typography variant="body" sx={{ color: record.arrived ? "green" : "red" }}>
+                                    Статус: {record.arrived ? "Прибыл" : "Не прибыл"}
+                                </Typography>
+                                <Typography variant="body">Код: {record.code}</Typography>
+                                {!record.arrived && (
+                                    <Button onClick={handleValidate}>Подтвердить</Button>
+                                )}
+
+                            </>
+                        )}
+                    </Stack>
+                </>
             </Modal>
         </>
     );
