@@ -25,6 +25,11 @@ const FindRecordButton = () => {
         close();
     };
 
+    const handleClose = () => {
+        handleClear()
+        close();
+    }
+
     const handleSearch = () => {
         getRecordByData(code)
             .then((record) => {
@@ -59,7 +64,7 @@ const FindRecordButton = () => {
                 Найти по коду
             </Button>
 
-            <Modal open={isOpen} onClose={close}
+            <Modal open={isOpen} onClose={handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description">
                 {record ? (
