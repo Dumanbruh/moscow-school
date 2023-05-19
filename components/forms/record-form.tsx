@@ -22,7 +22,7 @@ interface RecordProps {
 
 const RecordForm = ({ isDesktop, isViewer }: RecordProps) => {
     const { getSetting } = useSettings();
-    const [available, setAvailable] = React.useState(true);
+    const [available, setAvailable] = React.useState(false);
 
     React.useEffect(() => {
         getSetting()

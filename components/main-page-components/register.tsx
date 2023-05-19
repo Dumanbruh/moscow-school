@@ -13,7 +13,7 @@ import { useSettings } from "@/hooks/useSettings";
 const RegisterBlock = () => {
     const { isDesktop } = useGlobalMediaQuery();
     const { getSetting } = useSettings();
-    const [available, setAvailable] = React.useState(true);
+    const [available, setAvailable] = React.useState(false);
 
     useEffect(() => {
         getSetting()
