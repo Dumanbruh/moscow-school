@@ -1,7 +1,11 @@
 import { Container, Stack, Typography } from '@mui/material'
 import React from 'react'
 
-const VideoBlock = () => {
+interface Props {
+    isDesktop: boolean;
+}
+
+const VideoBlock = ({ isDesktop }: Props) => {
     return (
         <Stack sx={{
             width: "100%",
@@ -17,7 +21,7 @@ const VideoBlock = () => {
                 <Container maxWidth={"xl"} disableGutters sx={{ zIndex: 2, px: "20px" }}>
                     <iframe
                         width="100%"
-                        height="400"
+                        height={isDesktop ? "700" : "300"}
                         src="https://www.youtube.com/embed/1ijqkF0xnjc"
                         title="Фестиваль школьных видов спорта. 19 мая 2023 года. СК &quot;Москвич&quot;"
                         frameBorder="0"
