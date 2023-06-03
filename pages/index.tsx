@@ -8,6 +8,8 @@ import FestivalesBlock from "@/components/main-page-components/festivales-block"
 import ScheduleBlock from "@/components/main-page-components/schedule-block";
 import PreviewCover from "@/components/ui/preview-cover";
 import PreviewRegister from "@/components/ui/preview-register";
+import GalleryBLock from "@/components/ui/gallery";
+import VideoBlock from "@/components/main-page-components/video-block";
 
 
 export default function Home() {
@@ -15,6 +17,8 @@ export default function Home() {
 
   return (
     <Stack width={"100%"}>
+      <VideoBlock />
+      <GalleryBLock isDesktop={isDesktop} />
       <InformationBlock isDesktop={isDesktop} />
       <MapBlock isDesktop={isDesktop} />
       <FestivalesBlock isDesktop={isDesktop} />
