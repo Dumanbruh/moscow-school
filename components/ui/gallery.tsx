@@ -165,7 +165,8 @@ const GalleryBLock = ({ isDesktop }: Props) => {
                         <img style={{
                             height: "100%",
                             width: "100%",
-                            objectFit: "contain",
+                            overflowY: "hidden",
+                            objectFit: "cover",
                         }} src={url} alt="FullScreen Dialog" />
                     </Dialog>
                     <Box
