@@ -159,27 +159,14 @@ const GalleryBLock = ({ isDesktop }: Props) => {
                     <Dialog
                         open={open}
                         onClose={() => { setOpen(false) }}
-                        sx={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            height: '100%',
-                            margin: '0 auto'
-                        }}
                         aria-labelledby="image-dialog"
                         aria-describedby="image-dialog-description"
                     >
-                        <DialogContent sx={{
-                            width: '100%',
-                            height: '100%',
-                            maxWidth: '100%',
-                            maxHeight: '100%',
-                        }}>
-                            <img style={{
-                                maxWidth: '100%',
-                                maxHeight: '100%',
-                            }} src={url} alt="FullScreen Dialog" />
-                        </DialogContent>
+                        <img style={{
+                            height: "100%",
+                            width: "100%",
+                            objectFit: "contain",
+                        }} src={url} alt="FullScreen Dialog" />
                     </Dialog>
                     <Box
                         className={"next-button"}
