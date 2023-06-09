@@ -17,7 +17,6 @@ export default function Home() {
 
   return (
     <Stack width={"100%"}>
-      <VideoBlock isDesktop={isDesktop} />
       <GalleryBLock isDesktop={isDesktop} />
       <InformationBlock isDesktop={isDesktop} />
       <MapBlock isDesktop={isDesktop} />

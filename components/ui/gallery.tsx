@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Stack, Typography } from '@mui/material';
+import { Box, Container, Dialog, DialogContent, Grid, Modal, Stack, Typography, makeStyles } from '@mui/material';
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
@@ -82,16 +82,9 @@ const GalleryBLock = ({ isDesktop }: Props) => {
     const [showRightArrow, setShowRightArrow] = React.useState(true);
     const [activeIndex, setActiveIndex] = React.useState(0);
     const [isLastIndex, setIsLastIndex] = React.useState(false);
+    const [open, setOpen] = React.useState(false);
+    const [url, setUrl] = React.useState("");
 
-    function chunkArray(array: string[], chunk_size: number) {
-        let results = [];
-
-        while (array.length) {
-            results.push(array.splice(0, chunk_size));
-        }
-
-        return results;
-    }
 
 
     const handleChangeIndex = (index: number, lastIndex: number) => {
@@ -120,8 +113,8 @@ const GalleryBLock = ({ isDesktop }: Props) => {
             pb: isDesktop ? "93px" : "93px",
             background: "linear-gradient(90deg, #008185 0%, #01D2CB 100%)"
         }}>
-            <Container maxWidth={isDesktop ? false : "sm"} disableGutters sx={{ zIndex: 2, px: isDesktop ? "0px" : "40px", maxWidth: '1100px', position: "relative" }}>
-                <Stack sx={{ width: "100%", justifyContent: "center", alignItems: "center" }} spacing={"60px"}>
+            <Container maxWidth={isDesktop ? false : "sm"} disableGutters sx={{ zIndex: 2, px: isDesktop ? "0px" : "40px", maxWidth: '1100px' }}>
+                <Stack sx={{ width: "100%", justifyContent: "center", alignItems: "center", position: "relative" }} spacing={"60px"}>
                     <Typography variant='header' sx={{ fontSize: "64px", lineHeight: "64px", textAlign: "center" }}>Галерея</Typography>
                     <Swiper slidesPerView={"auto"}
                         modules={[Navigation]}
@@ -132,6 +125,7 @@ const GalleryBLock = ({ isDesktop }: Props) => {
                         style={{ overflow: "visible", width: "100%" }}
                         spaceBetween={isDesktop ? 48 : 16}
                         resistance={false}
+                        lazyPreloadPrevNext={1}
                         onActiveIndexChange={(e: any) =>
                             handleChangeIndex(e.activeIndex, e.progress)
                         }
@@ -142,14 +136,51 @@ const GalleryBLock = ({ isDesktop }: Props) => {
                             <SwiperSlide key={photo.id} style={{ width: isDesktop ? "1100px" : "320px" }}>
                                 <Grid container spacing={1} sx={{ width: "100%", mx: "0px" }}>
                                     {photo.chunk.map((src, i) => (
-                                        <Grid item key={i} xs={isDesktop ? 4 : 6}>
-                                            <Box component={"img"} src={src} sx={{ height: isDesktop ? "300px" : "200px", width: "100%" }} />
+                                        <Grid item key={i} xs={isDesktop ? 4 : 6} onClick={() => {
+                                            setOpen(true);
+                                            setUrl(src)
+                                        }}>
+                                            <Box
+                                                sx={{
+                                                    height: isDesktop ? "300px" : "200px",
+                                                    width: "100%",
+                                                    backgroundImage: `url(${src})`,
+                                                    backgroundRepeat: "no-repeat",
+                                                    backgroundPosition: "center center",
+                                                    backgroundSize: "cover",
+                                                }}
+                                            />
                                         </Grid>
                                     ))}
                                 </Grid>
                             </SwiperSlide>
                         ))}
                     </Swiper>
+                    <Dialog
+                        open={open}
+                        onClose={() => { setOpen(false) }}
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            height: '100%',
+                            margin: '0 auto'
+                        }}
+                        aria-labelledby="image-dialog"
+                        aria-describedby="image-dialog-description"
+                    >
+                        <DialogContent sx={{
+                            width: '100%',
+                            height: '100%',
+                            maxWidth: '100%',
+                            maxHeight: '100%',
+                        }}>
+                            <img style={{
+                                maxWidth: '100%',
+                                maxHeight: '100%',
+                            }} src={url} alt="FullScreen Dialog" />
+                        </DialogContent>
+                    </Dialog>
                     <Box
                         className={"next-button"}
                         component={"img"}
@@ -177,7 +208,19 @@ const GalleryBLock = ({ isDesktop }: Props) => {
                         }}
                     />
                 </Stack>
-            </Container >
+            </Container>
+            <Container maxWidth={"xl"} disableGutters sx={{ zIndex: 2, px: "20px" }}>
+                <iframe
+                    width="100%"
+                    height={isDesktop ? "700" : "300"}
+                    style={{ marginTop: "60px" }}
+                    src="https://www.youtube.com/embed/1ijqkF0xnjc"
+                    title="Фестиваль школьных видов спорта. 19 мая 2023 года. СК &quot;Москвич&quot;"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen>
+                </iframe>
+            </Container>
         </Stack >
     )
 }
