@@ -17,11 +17,11 @@ export default function Home() {
 
   return (
     <Stack width={"100%"}>
-      <GalleryBLock isDesktop={isDesktop} />
+      {/* <GalleryBLock isDesktop={isDesktop} />
       <InformationBlock isDesktop={isDesktop} />
       <MapBlock isDesktop={isDesktop} />
       <FestivalesBlock isDesktop={isDesktop} />
-      <ScheduleBlock isDesktop={isDesktop} />
+      <ScheduleBlock isDesktop={isDesktop} /> */}
     </Stack>
   )
 }

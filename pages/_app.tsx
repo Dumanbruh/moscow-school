@@ -47,7 +47,7 @@ export default function App({
           {removeNavbar ? null : (
             <>
               <Cover />
-              <RegisterBlock />
+              {/* <RegisterBlock /> */}
             </>
           )}
           <Component {...pageProps} />
